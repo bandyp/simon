@@ -1,0 +1,85 @@
+body {
+    background-image: url("wood.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#circumference {
+    background-color: black;
+    height: 440px;
+    width: 440px;
+    border-radius: 50%;
+    position: sticky;
+    margin-top: 50px;
+    border: solid 10px black;
+    margin: auto;
+}
+
+#blue {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border-radius: 200px 0 0 0;
+    background: blue;
+    top: 50%;
+    left: 50%;
+    margin: -210px 0px 0px -210px;
+    border: solid 5px black;
+}
+
+#green {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border-radius: 0 200px 0 0;
+    background: green;
+    top: 50%; 
+    right: 50%;
+    margin: -210px -210px 0px 0px;
+    border: solid 5px black;
+}
+
+#red {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border-radius: 0 0 200px 0;
+    background: red;
+    bottom: 50%;
+    left: 50%;
+    margin: 0px -210px -210px 0px;
+    border: solid 5px black;
+}
+
+#yellow {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border-radius: 0 0 0 200px;
+    background: yellow;
+    bottom: 50%;
+    right: 50%;
+    margin: 0px 0px -210px -210px;
+    border: solid 5px black;
+}
+
+#control-panel {
+    position: absolute;
+    background-color: gray;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 5px black;
+    z-index: 1;
+    margin: -110px 0px 0px -110px;
+    top: 50%;
+    left: 50%;
+}
+
+#buttons {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 100px;
+    z-index: 2;
+}
