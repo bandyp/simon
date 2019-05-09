@@ -1,80 +1,76 @@
 body {
     background-image: url("wood.jpg");
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
 }
 
 #circumference {
+    position: fixed;
     background-color: black;
-    height: 440px;
-    width: 440px;
+    height: 480px;
+    width: 480px;
     border-radius: 50%;
-    position: sticky;
-    margin-top: 50px;
-    border: solid 10px black;
     margin: auto;
+    border: solid 0px black;
+    box-shadow: 20px 10px 60px black;
+}
+
+#inner {
+    list-style-type: none;
+    display: inline;
 }
 
 #blue {
-    position: absolute;
-    height: 200px;
-    width: 200px;
-    border-radius: 200px 0 0 0;
+    position: inherit;
+    height: 210px;
+    width: 210px;
+    border-radius: 210px 0 0 0;
     background: blue;
     top: 50%;
-    left: 50%;
-    margin: -210px 0px 0px -210px;
-    border: solid 5px black;
-}
-
-#green {
-    position: absolute;
-    height: 200px;
-    width: 200px;
-    border-radius: 0 200px 0 0;
-    background: green;
-    top: 50%; 
-    right: 50%;
-    margin: -210px -210px 0px 0px;
-    border: solid 5px black;
-}
-
-#red {
-    position: absolute;
-    height: 200px;
-    width: 200px;
-    border-radius: 0 0 200px 0;
-    background: red;
-    bottom: 50%;
-    left: 50%;
-    margin: 0px -210px -210px 0px;
+    margin: 0px 0px 0px 20px;
     border: solid 5px black;
 }
 
 #yellow {
-    position: absolute;
-    height: 200px;
-    width: 200px;
-    border-radius: 0 0 0 200px;
+    position: inherit;
+    height: 210px;
+    width: 210px;
+    border-radius: 0 210px 0 0;
     background: yellow;
-    bottom: 50%;
-    right: 50%;
-    margin: 0px 0px -210px -210px;
+    margin: -210px 0px 0px 240px;
+    border: solid 5px black;
+}
+
+#red {
+    position: inherit;
+    height: 210px;
+    width: 210px;
+    border-radius: 0 0 210px 0;
+    background: red;
+    margin: -210px 0px 240px 240px;
+    border: solid 5px black;
+}
+
+#green {
+    position: inherit;
+    height: 210px;
+    width: 210px;
+    border-radius: 0 0 0 210px;
+    background: green;
+    margin: 10px 10px 0 20px;
     border: solid 5px black;
 }
 
 #control-panel {
-    position: absolute;
+    position: fixed;
     background-color: gray;
     height: 200px;
     width: 200px;
     border-radius: 50%;
     border: solid 5px black;
     z-index: 1;
-    margin: -110px 0px 0px -110px;
-    top: 50%;
-    left: 50%;
+    margin: -340px 0px 0px 390px;
 }
 
 #buttons {
@@ -82,4 +78,44 @@ body {
     margin-top: 20px;
     margin-left: 100px;
     z-index: 2;
+    display: inline;
+}
+
+#four-sq {
+    list-style-type: none;
+    
+}
+
+#blue-sq {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    border-width: 10px 5px 5px 5px;
+    border-bottom-color: black;
+}
+
+#green-sq {
+    background-color: green;
+    height: 100px;
+    width: 100px;
+    border-width: 10px 5px 5px 5px;
+    border-bottom-color: black;
+    float: right;
+}
+
+#red-sq {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    border-width: 10px 5px 5px 5px;
+    border-bottom-color: black;
+}
+
+#yellow-sq {
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+    border-width: 10px 5px 5px 5px;
+    border-bottom-color: black;
+    float: right;
 }
