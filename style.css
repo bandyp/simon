@@ -1,8 +1,21 @@
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+    min-height: 100%;
+}
+
 body {
     background-image: url("wood.jpg");
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
+}
+
+.col {
+    margin: 0 auto;
+    text-align: center;
 }
 
 #circumference {
@@ -26,10 +39,17 @@ body {
     height: 210px;
     width: 210px;
     border-radius: 210px 0 0 0;
-    background: blue;
     top: 50%;
     margin: 0px 0px 0px 20px;
     border: solid 5px black;
+}
+
+.blueButton {
+    background: darkblue;
+}
+
+.lightBlue {
+    background: blue;
 }
 
 #yellow {
@@ -37,9 +57,16 @@ body {
     height: 210px;
     width: 210px;
     border-radius: 0 210px 0 0;
-    background: yellow;
     margin: -210px 0px 0px 240px;
     border: solid 5px black;
+}
+
+.yellowButton {
+    background: goldenrod;
+}
+
+.lightYellow {
+    background: yellow;
 }
 
 #red {
@@ -47,9 +74,16 @@ body {
     height: 210px;
     width: 210px;
     border-radius: 0 0 210px 0;
-    background: red;
     margin: -210px 0px 240px 240px;
     border: solid 5px black;
+}
+
+.redButton {
+    background: darkred;
+}
+
+.lightRed {
+    background: red;
 }
 
 #green {
@@ -57,33 +91,54 @@ body {
     height: 210px;
     width: 210px;
     border-radius: 0 0 0 210px;
-    background: green;
     margin: 10px 10px 0 20px;
     border: solid 5px black;
 }
 
+.greenButton {
+    background: darkgreen;
+}
+
+.lightGreen {
+    background: green;
+}
+
 #control-panel {
-    position: fixed;
+    position: absolute;
     background-color: gray;
     height: 200px;
     width: 200px;
     border-radius: 50%;
     border: solid 5px black;
     z-index: 1;
-    margin: -340px 0px 0px 390px;
+    margin: 130px 0px 0px 135px;
+    clear: both;
+    box-shadow: 20px 10px 60px black;
 }
 
 #buttons {
     position: absolute;
-    margin-top: 20px;
-    margin-left: 100px;
     z-index: 2;
     display: inline;
 }
 
+#count {
+    position: absolute;
+    background: black;
+    height: 40px;
+    width: 50px;
+    margin-left: 70px;
+    margin-top: 25px;
+    color: red;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20px;
+}
+
 #four-sq {
     list-style-type: none;
-    
+
 }
 
 #blue-sq {
