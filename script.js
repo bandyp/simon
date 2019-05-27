@@ -1,63 +1,91 @@
-// sequence of 20 from start button from memory game and code insitute wwschools
+$(document).ready(function() {
 
-let order = [];
 
-document.getElementById("start").addEventListener("click", computerSequence);
+// power on
 
-function computerSequence() {
-    order = [];
-    for (var i = 0; i < 20; i++) {
-        order.push(Math.floor(Math.random() * 4) * 1);
+    $("#power").click(function() {
+        $("#count").text("--");
+    });
+
+
+// sequence of 20 from start button (from memory game, code insitute, wwschools)
+
+    let sequence = [];
+
+    document.getElementById("start").addEventListener("click", computerSequence);
+
+    function computerSequence() {
+        sequence = [];
+        for (var i = 0; i < 20; i++) {
+            sequence.push(Math.floor(Math.random() * 4) + 1);
+        }
+        console.log(sequence);
     }
-    console.log(order);
+    
+
+// computer sequence and color
+
+
+var userSequence = [];
+var lightID = [];
+var y = 0;
+var count = 1;
+var light;
+var x;
+
+function computerColor() {
+    
+x = setInterval(function() {
+    if (sequence == 1) {
+        light = 'lightGreen';
+        $('#green').addClass(light);
+        
+    } else if (sequence == 2) {
+        light = 'lightBlue';
+        $('#blue').addclass(light);
+        
+    } else if (sequence == 3) {
+        light = "lightYellow";
+        $('#yellow').addClass(light);
+   
+    } else {
+        light = "lightRed"; 
+        $('#red').addClass(light);
+    }
+    }, 1000);
 }
 
 // user clicking lights from code insitute module
 
-$(document).ready(function() {
     $("#green").mousedown(function() {
-        $(this).removeClass('greenButton');
-        $(this).addClass('lightGreen'); // changes to light green
-        console.log('1');
+        $(this).removeClass('greenButton').addClass('lightGreen'); // changes to light green
+        console.log('0');
         $("#green").mouseup(function() {
-            $(this).removeClass('lightGreen');
-            $(this).addClass('greenButton') //changes back
+            $(this).removeClass('lightGreen').addClass('greenButton') //changes back
         });
     });
-});
 
-$(document).ready(function() {
     $("#blue").mousedown(function() {
-        $(this).removeClass('blueButton');
-        $(this).addClass('lightBlue'); // changes to light blue
-        console.log('2');
+        $(this).removeClass('blueButton').addClass('lightBlue'); // changes to light blue
+        console.log('1');
         $("#blue").mouseup(function() {
-            $(this).removeClass('lightBlue');
-            $(this).addClass('blueButton') //changes back
+            $(this).removeClass('lightBlue').addClass('blueButton') //changes back
         });
     });
-});
 
-$(document).ready(function() {
     $("#yellow").mousedown(function() {
-        $(this).removeClass('yellowButton');
-        $(this).addClass('lightYellow'); // changes to light yellow
-        console.log('3');
+        $(this).removeClass('yellowButton').addClass('lightYellow'); // changes to light yellow
+        console.log('2');
         $("#yellow").mouseup(function() {
-            $(this).removeClass('lightYellow');
-            $(this).addClass('yellowButton') //changes back
+            $(this).removeClass('lightYellow').addClass('yellowButton') //changes back
         });
     });
-});
 
-$(document).ready(function() {
     $("#red").mousedown(function() {
-        $(this).removeClass('redButton');
-        $(this).addClass('lightRed'); // changes to light red
-        console.log('4');
+        $(this).removeClass('redButton').addClass('lightRed'); // changes to light red
+        console.log('3');
         $("#red").mouseup(function() {
-            $(this).removeClass('lightRed');
-            $(this).addClass('redButton') //changes back
+            $(this).removeClass('lightRed').addClass('redButton') //changes back
         });
     });
 });

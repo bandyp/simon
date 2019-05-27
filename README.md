@@ -1,24 +1,21 @@
 When power switch is toggle on:
-•	Turn on power light to yellow
-•	Change counter to “-“
+•	Change counter to “--“
 
 When power switch is toggle off:
 •	Reset all functions
 •	No functions start, click button does not go
-•	Turn power light to gray
 •	Colors to dark
-•	Counter to blank
+•	Counter to blank ""
 
 When start button is clicked, play function:
-•	Series of random 4 (1,2,3,4) numbers start, linked to :
-    o	Colors (blue, yellow, red, green)
-    o	Quadrants (1,2,3,4)
+•	Function "sequence" - Series of random 4 (1,2,3,4) 
+function "simonArray" to link numbers:
+    o	Colors (green, blue, yellow, red)
     o	Noise (E, C#, A, E (octave higher)
-•	1 sec intervals
-•	0.2 sec space between 
-•	1 through to 20 repeated in increments
+•	function "intervals" to play sequence in increments of 1 at 0.8 sec intervals, with 0.2 sec in between
+•	Function to allow user to repeat and sequence
 •	Computer first then player repeats
-•	If player does not = computer or takes too long, then do fail function 
+•	If player does not === computer then do fail function,  else continue 
 •	If player reaches 20 then do success function
 
 Fail function
