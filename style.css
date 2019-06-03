@@ -42,15 +42,16 @@ body {
     top: 50%;
     margin: 0px 0px 0px 20px;
     border: solid 5px black;
+    background: darkblue;
 }
 
-.blueButton {
-    background: darkblue;
+/*.blueButton {
+    
 }
 
 .lightBlue {
     background: blue;
-}
+}*/
 
 #yellow {
     position: inherit;
@@ -59,15 +60,16 @@ body {
     border-radius: 0 210px 0 0;
     margin: -210px 0px 0px 240px;
     border: solid 5px black;
+    background: goldenrod;
 }
 
-.yellowButton {
-    background: goldenrod;
+/*.yellowButton {
+    
 }
 
 .lightYellow {
     background: yellow;
-}
+} */
 
 #red {
     position: inherit;
@@ -76,16 +78,17 @@ body {
     border-radius: 0 0 210px 0;
     margin: -210px 0px 240px 240px;
     border: solid 5px black;
-}
-
-.redButton {
     background: darkred;
 }
 
-.lightRed {
-    background: red;
+.bright {
+    filter: brightness(150%);
 }
 
+ /* .lightRed {
+    background: red;
+} */
+    
 #green {
     position: inherit;
     height: 210px;
@@ -93,15 +96,16 @@ body {
     border-radius: 0 0 0 210px;
     margin: 10px 10px 0 20px;
     border: solid 5px black;
+    background: darkgreen;
 }
 
-.greenButton {
-    background: darkgreen;
+/*.greenButton {
+    
 }
 
 .lightGreen {
     background: green;
-}
+}*/
 
 #control-panel {
     position: absolute;

@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+var on = false;
 
     // power on
 
@@ -8,19 +9,31 @@ $(document).ready(function() {
     });
 
 
-    // sequence of 20 from start button (from memory game, code insitute, wwschools)
-
-    var sequence = [];
+// press start button to begin
 
     $("#start").on("click", function() {
-        sequence = [];
+        play();
+    });
+
+// start play function 
+     
+     sequence = [];
+        
+    function play() {    
+        
+        count.innerHTML = 1;
+        win = false;
+        userSequence = [];
+        good = true;
+        
+   // sequence of 20 from start button (from memory game, code insitute, wwschools)
+   
         for (var i = 0; i < 20; i++) {
             sequence.push(Math.floor(Math.random() * 4) + 1);
         }
         console.log(sequence);
-        $('#count').text(sequence);
         computerColor();
-    });
+    }
 
     // computer sequence and color
 
@@ -28,7 +41,7 @@ $(document).ready(function() {
     var userSequence = [];
     var lightID = [];
     var light;
-    var x;
+    var x = 0;
 
     function computerColor() {
 
@@ -76,39 +89,41 @@ $(document).ready(function() {
 
     // user clicking lights (from code insitute module)
 
+
     $("#green").mousedown(function() {
-        userSequence = [1];
-        $(this).removeClass('greenButton').addClass('lightGreen'); // changes to light green
-        console.log(userSequence);
+        userSequence.push[1];
+        $(this).addClass('bright'); // changes to light green
+        
         $("#green").mouseup(function() {
-            $(this).removeClass('lightGreen').addClass('greenButton') //changes back
+            $(this).removeClass('bright') //changes back
         });
     });
 
     $("#blue").mousedown(function() {
-        userSequence = [2];
-        $(this).removeClass('blueButton').addClass('lightBlue'); // changes to light blue
-        console.log(userSequence);
+        userSequence.push[2];
+        $(this).addClass('bright'); // changes to light blue
+        
         $("#blue").mouseup(function() {
-            $(this).removeClass('lightBlue').addClass('blueButton') //changes back
+            $(this).removeClass('bright')//changes back
         });
     });
 
     $("#yellow").mousedown(function() {
-        userSequence = [3];
-        $(this).removeClass('yellowButton').addClass('lightYellow'); // changes to light yellow
-        console.log(userSequence);
+        userSequence.push[3];
+        $(this).addClass('bright'); // changes to light yellow
+        
         $("#yellow").mouseup(function() {
-            $(this).removeClass('lightYellow').addClass('yellowButton') //changes back
+            $(this).removeClass('bright') //changes back
         });
     });
 
     $("#red").mousedown(function() {
-        userSequence = [4];
-        $(this).removeClass('redButton').addClass('lightRed'); // changes to light red
-        console.log(userSequence);
+        userSequence.push[4];
+        $(this).addClass('bright'); // changes to light red
+        
         $("#red").mouseup(function() {
-            $(this).removeClass('lightRed').addClass('redButton') //changes back
+            $(this).removeClass('bright') //changes back
         });
     });
+    console.log(userSequence);
 });
