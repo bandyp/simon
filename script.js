@@ -1,14 +1,14 @@
 $(document).ready(function() {
 
-//    var on = false;
+    //    var on = false;
     var sequence = [];
     var cpuSequence = [];
     var userSequence = [];
-//    var win;
+    var win = false;
     var turn = 0;
-    var count = 0;
 
-//    const startButton = document.getElementById('#start')
+
+    //    const startButton = document.getElementById('#start')
 
     // power on
 
@@ -26,105 +26,152 @@ $(document).ready(function() {
     // start play function 
 
     function play() {
+        //   var count = 1;
+        // count.innerHTML = 1;
+        //        win = false;
+        // userSequence = [];
+        // cpuSequence = [];
 
-        count.innerHTML = 1;
-//        win = false;
-        userSequence = [];
-//        good = true;
+        //        good = true;
 
         // sequence of 20 from start button (from memory game, code insitute, wwschools)
 
         for (var i = 0; i < 20; i++) {
             sequence.push(Math.floor(Math.random() * 4) + 1);
         }
+
         console.log(sequence);
-        cpuSequence == sequence[0];
-        turn = 1;
+
         makeBright();
-        turn++;
-        count = turn;
-        console.log(turn);
-        console.log(count);
-        count.innerHTML = (turn);
+
+
+        //count = turn;
+
+        //console.log(count);
+        //count.innerHTML = (turn);
     }
 
     function makeBright() {
-        if (sequence[turn] == 1)
+        //   turn = 1;
+        if (sequence[turn] == 1) {
+            cpuSequence.push(1);
+            console.log(cpuSequence);
             $('#green').addClass('bright'),
-            setTimeout(function() {
-                $('#green').removeClass('bright');
+                setTimeout(function() {
+                    $('#green').removeClass('bright');
                 }, 800);
-        else if (sequence[turn] == 2)
+        }
+        else if (sequence[turn] == 2) {
+            cpuSequence.push(2);
+            console.log(cpuSequence);
             $('#blue').addClass('bright'),
-            setTimeout(function() {
-                $('#blue').removeClass('bright');
+                setTimeout(function() {
+                    $('#blue').removeClass('bright');
                 }, 800);
-        else if (sequence[turn] == 3)
+        }
+        else if (sequence[turn] == 3) {
+            cpuSequence.push(3);
+            console.log(cpuSequence);
             $('#yellow').addClass('bright'),
-            setTimeout(function() {
-                $('#yellow').removeClass('bright');
+                setTimeout(function() {
+                    $('#yellow').removeClass('bright');
                 }, 800);
-        else if (sequence[turn] == 4)
+        }
+        else if (sequence[turn] == 4) {
+            cpuSequence.push(4);
+            console.log(cpuSequence);
             $('#red').addClass('bright'),
-            setTimeout(function() {
-                $('#red').removeClass('bright');
+                setTimeout(function() {
+                    $('#red').removeClass('bright');
                 }, 800);
-    
-        
+        }
+        turn++;
+        console.log(turn);
     }
 
 
-
-//    function makeDark() {
-//        if (sequence[turn] == 1)
-//            $('#green').removeClass('colorButton');
-//            cpuSequence.push.sequence[turn];
-//        else if (sequence[turn] == 2)
-//            $('#blue').removeClass('colorButton');
-//        else if (sequence[turn] == 3)
-//            $('#yellow').removeClass('colorButton');
-//        else if (sequence[turn] == 4)
-//            $('#red').removeClass('colorButton');
-//    }
-//        $(this).removeClass('colorButton');
-//    }
-
-// user clicking lights (from code insitute module)
+    // user clicking lights (from code insitute module)
 
 
     $("#green").mousedown(function() {
         $(this).addClass('bright'); // changes to light green
         userSequence.push(1);
+        console.log(userSequence);
         $("#green").mouseup(function() {
             $(this).removeClass('bright'); //changes back
         });
+        if (userSequence[0] == cpuSequence[0]) {
+            console.log("correct");
+            win == true;
+            makeBright();
+        }
+        else {
+            console.log("wrong");
+            win == false;
+        }
     });
 
     $("#blue").mousedown(function() {
         $(this).addClass('bright'); // changes to light blue
         userSequence.push(2);
+        console.log(userSequence);
         $("#blue").mouseup(function() {
             $(this).removeClass('bright'); //changes back
         });
+       if (userSequence[0] == cpuSequence[0]) {
+            console.log("correct");
+            win == true;
+            makeBright();
+        }
+        else {
+            console.log("wrong");
+            win == false;
+        }
     });
 
     $("#yellow").mousedown(function() {
         userSequence.push(3);
+        console.log(userSequence);
         $(this).addClass('bright'); // changes to light yellow
 
         $("#yellow").mouseup(function() {
             $(this).removeClass('bright'); //changes back
         });
+       if (userSequence[0] == cpuSequence[0]) {
+            console.log("correct");
+            win == true;
+            makeBright();
+        }
+        else {
+            console.log("wrong");
+            win == false;
+        }
     });
 
     $("#red").mousedown(function() {
         userSequence.push(4);
+        console.log(userSequence);
         $(this).addClass('bright'); // changes to light red
 
         $("#red").mouseup(function() {
             $(this).removeClass('bright'); //changes back
         });
+        if (userSequence[0] == cpuSequence[0]) {
+            console.log("correct");
+            win == true;
+            makeBright();
+        }
+        else {
+            console.log("wrong");
+            win == false;
+        }
     });
-    console.log(userSequence);
+
+//if (win == true) {
+//    makeBright();
+//} else {
+//    play();
+//}
+
 
 });
