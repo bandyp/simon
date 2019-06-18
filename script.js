@@ -1,11 +1,14 @@
 $(document).ready(function() {
 
-    //    var on = false;
+    //var on = false;
     var sequence = [];
     var cpuSequence = [];
     var userSequence = [];
-    var win = false;
+    var success = false;
     var turn = 0;
+    var win = false;
+ //   var intervalWait;
+//    var good;
 
 
     //    const startButton = document.getElementById('#start')
@@ -13,14 +16,21 @@ $(document).ready(function() {
     // power on
 
     $("#power").click(function() {
-        $("#count").text("--");
+//        $("#count").toggleClass(function(){
+            $("#count").html('0');
+//        });
+    //        $(".counter").text("--");
+    //    on = true;
     });
 
 
     // press start button to begin
 
     $("#start").on("click", function() {
+        $("#count").html('1');
+//        if (on || success) {
         play();
+//        }
     });
 
     // start play function 
@@ -28,8 +38,9 @@ $(document).ready(function() {
     function play() {
         //   var count = 1;
         // count.innerHTML = 1;
-        //        win = false;
-        // userSequence = [];
+     //   success = false;
+       // intervalWait = 0;
+        //userSequence = [];
         // cpuSequence = [];
 
         //        good = true;
@@ -42,7 +53,7 @@ $(document).ready(function() {
 
         console.log(sequence);
 
-        makeBright();
+        setTimeout(makeBright, 200);
 
 
         //count = turn;
@@ -87,6 +98,8 @@ $(document).ready(function() {
         }
         turn++;
         console.log(turn);
+        $("#count").html(turn);
+        
     }
 
 
@@ -100,14 +113,16 @@ $(document).ready(function() {
         $("#green").mouseup(function() {
             $(this).removeClass('bright'); //changes back
         });
-        if (userSequence[0] == cpuSequence[0]) {
+        if (userSequence[userSequence.length - 1] == cpuSequence[cpuSequence.length - 1]) {
             console.log("correct");
-            win == true;
-            makeBright();
+            $("#count").html(turn + 1);
+            success = true;
+            setTimeout(makeBright(), 200);
         }
         else {
             console.log("wrong");
-            win == false;
+            success == false;
+            setTimeout(end(), 200);
         }
     });
 
@@ -118,14 +133,16 @@ $(document).ready(function() {
         $("#blue").mouseup(function() {
             $(this).removeClass('bright'); //changes back
         });
-       if (userSequence[0] == cpuSequence[0]) {
+       if (userSequence[userSequence.length - 1] == cpuSequence[cpuSequence.length - 1]) {
             console.log("correct");
-            win == true;
-            makeBright();
+             $("#count").html(turn + 1);
+            success = true;
+            setTimeout(makeBright(), 200);
         }
         else {
             console.log("wrong");
-            win == false;
+            success = false;
+            setTimeout(end(), 200);
         }
     });
 
@@ -137,14 +154,16 @@ $(document).ready(function() {
         $("#yellow").mouseup(function() {
             $(this).removeClass('bright'); //changes back
         });
-       if (userSequence[0] == cpuSequence[0]) {
+       if (userSequence[userSequence.length - 1] == cpuSequence[cpuSequence.length - 1]) {
             console.log("correct");
-            win == true;
-            makeBright();
+             $("#count").html(turn + 1);
+            success = true;
+            setTimeout(makeBright(), 200);
         }
         else {
             console.log("wrong");
-            win == false;
+            success == false;
+            setTimeout(end(), 200);
         }
     });
 
@@ -156,17 +175,22 @@ $(document).ready(function() {
         $("#red").mouseup(function() {
             $(this).removeClass('bright'); //changes back
         });
-        if (userSequence[0] == cpuSequence[0]) {
+        if (userSequence[userSequence.length - 1] == cpuSequence[cpuSequence.length - 1]) {
             console.log("correct");
-            win == true;
-            makeBright();
+             $("#count").html(turn + 1);
+            success = true;
+            setTimeout(makeBright(), 200);
         }
         else {
             console.log("wrong");
-            win == false;
+            success == false;
+            setTimeout(end(), 200);
         }
     });
 
+function end() {
+    $("#count").html('0');
+}
 //if (win == true) {
 //    makeBright();
 //} else {
