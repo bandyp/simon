@@ -140,7 +140,7 @@ body {
     line-height: 20px;
 }
 
-.counter {
-    content: "01";
+.power {
+    color: black;
 }
 
