@@ -6,7 +6,8 @@ $(document).ready(function() {
     var userSequence = [];
     var success = false;
     var turn = 0;
- //   var count = 1;
+ //   var cpuTurn;
+    //   var count = 1;
 
     //    var buttonClicked = true;
 
@@ -40,7 +41,8 @@ $(document).ready(function() {
             cpuSequence = [];
             startSimon();
             document.getElementById("start").disabled = false;
-   //         $("#start").disabled = false;
+            document.getElementById("inner").disabled = false;
+            //         $("#start").disabled = false;
             //      x = false;
         }
         else {
@@ -51,8 +53,9 @@ $(document).ready(function() {
     function powerOff() {
         $('.colorButton').removeClass('bright'),
             $("#count").html('');
-            document.getElementById("start").disabled = true;
- //           $("#start").disabled = true;
+        document.getElementById("start").disabled = true;
+        document.getElementById("inner").disabled = true;
+        //           $("#start").disabled = true;
     }
 
     // press start button to begin
@@ -71,13 +74,13 @@ $(document).ready(function() {
     // start play function by creating sequence of 20 from start button (from memory game, code insitute, wwschools)
 
     function play() {
-        sequence = [];
- //       var count = 1;
-        success = false;
-        userSequence = [];
-        cpuSequence = [];
-        $("#count").html(turn);
-        turn = 0;
+        //      sequence = [];
+        //       var count = 1;
+        //       success = false;
+        //        userSequence = [];
+        //        cpuSequence = [];
+        //        $("#count").html(turn);
+        //        turn = 0;
 
         for (var i = 0; i < 20; i++) {
             sequence.push(Math.floor(Math.random() * 4) + 1);
@@ -123,114 +126,84 @@ $(document).ready(function() {
                     $('#red').removeClass('bright');
                 }, 800);
         }
-        turn++;
-        console.log(turn);
-        $("#count").html(turn);
+
         userTurn();
 
         //        }
-    }
+    };
 
     function userTurn() {
-//        if (count == turn) {
-            //         if (success == true) {
+        //        if (count == turn) {
+        //         if (success == true) {
 
-            // user clicking lights (from code insitute module)
+        // user clicking lights (from code insitute module)
 
 
-            $("#green").mousedown(function() {
-                $(this).addClass('bright'); // changes to light green
-                userSequence.push(1);
-                console.log(userSequence);
-                $("#green").mouseup(function() {
+        $("#green").mousedown(function() {
+            $(this).addClass('bright'); // changes to light green
+            userSequence.push(1);
+            console.log(userSequence);
+            $("#green").mouseup(function() {
+                $(this).removeClass('bright'); //changes back
+                compareArrays();
+            });
+
+        });
+
+        $("#blue").mousedown(function() {
+            $(this).addClass('bright'); // changes to light blue
+            userSequence.push(2);
+            console.log(userSequence);
+            $("#blue").mouseup(function() {
+                $(this).removeClass('bright'); //changes 
+                compareArrays();
+            });
+
+        });
+
+        $("#yellow").mousedown(function() {
+            userSequence.push(3);
+            console.log(userSequence);
+            $(this).addClass('bright'); // changes to light yellow
+
+            $("#yellow").mouseup(function() {
+                $(this).removeClass('bright'); //changes back
+                compareArrays();
+            });
+
+        });
+
+        $("#red").mousedown(function() {
+            userSequence.push(4);
+            console.log(userSequence);
+            $(this).addClass('bright'); // changes to light red
+
+            $("#red").mouseup(function() {
                     $(this).removeClass('bright'); //changes back
-                    if (userSequence[userSequence.length - 1] == cpuSequence[cpuSequence.length - 1]) {
-                        console.log("correct");
-                        $("#count").html(turn + 1);
-                        success = true;
-                        setTimeout(makeBright(), 500);
-                    }
-                    else if (userSequence.length == 20 && success == true) {
-                        win();
-                    }
-                    else {
-                        console.log("wrong");
-                        success == false;
-                        setTimeout(end(), 500);
-                    }
-
-                });
-
+                    compareArrays();
+                
             });
+        });
+    }
 
-            $("#blue").mousedown(function() {
-                $(this).addClass('bright'); // changes to light blue
-                userSequence.push(2);
-                console.log(userSequence);
-                $("#blue").mouseup(function() {
-                    $(this).removeClass('bright'); //changes 
-                    if (userSequence[userSequence.length - 1] == cpuSequence[cpuSequence.length - 1]) {
-                        console.log("correct");
-                        $("#count").html(turn + 1);
-                        success = true;
-                        setTimeout(makeBright(), 500);
-                    }
-                    else {
-                        console.log("wrong");
-                        success = false;
-                        setTimeout(end(), 500);
-                    }
-                });
-
-            });
-
-            $("#yellow").mousedown(function() {
-                userSequence.push(3);
-                console.log(userSequence);
-                $(this).addClass('bright'); // changes to light yellow
-
-                $("#yellow").mouseup(function() {
-                    $(this).removeClass('bright'); //changes back
-                    if (userSequence[userSequence.length - 1] == cpuSequence[cpuSequence.length - 1]) {
-                        console.log("correct");
-                        $("#count").html(turn + 1);
-                        success = true;
-                        setTimeout(makeBright(), 500);
-                    }
-                    else {
-                        console.log("wrong");
-                        success == false;
-                        setTimeout(end(), 500);
-                    }
-                });
-
-            });
-
-            $("#red").mousedown(function() {
-                userSequence.push(4);
-                console.log(userSequence);
-                $(this).addClass('bright'); // changes to light red
-
-                $("#red").mouseup(function() {
-                    $(this).removeClass('bright'); //changes back
-                    if (userSequence[userSequence.length - 1] == cpuSequence[cpuSequence.length - 1]) {
-                        console.log("correct");
-                        $("#count").html(turn + 1);
-                        success = true;
-                        setTimeout(makeBright(), 500);
-                    }
-                    else {
-                        console.log("wrong");
-                        success == false;
-                        setTimeout(end(), 500);
-                    }
-                });
-
-            });
-            //     }
-            //      else {
-            //            restart();
-  //      }
+    function compareArrays() {
+        if (userSequence[userSequence.length - 1] == cpuSequence[cpuSequence.length - 1]) {
+            console.log("correct");
+            $("#count").html(turn + 1);
+            success = true;
+            setTimeout(makeBright(), 500);
+            turn++;
+            console.log(turn);
+            $("#count").html(turn);
+        }
+        else if (userSequence.length == 3 && success == true) {
+            win();
+        }
+        else {
+            console.log("wrong");
+            success = false;
+            setTimeout(end(), 500);
+        }
     }
 
     function end() {
@@ -241,7 +214,6 @@ $(document).ready(function() {
         $(".colorButton").addClass('bright');
         $("#count").html('LOST');
         setTimeout(restart, 3000);
-
     }
 
     function restart() {
@@ -249,6 +221,12 @@ $(document).ready(function() {
         $(".colorButton").removeClass('bright');
         console.log(cpuSequence);
         console.log(userSequence);
+    }
+
+    function win() {
+        $(".colorButton").addClass('bright');
+        $("#count").html('WIN!');
+        setTimeout(restart, 3000);
     }
 
 });
