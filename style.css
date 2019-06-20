@@ -45,14 +45,6 @@ body {
     background: darkblue;
 }
 
-/*.blueButton {
-    
-}
-
-.lightBlue {
-    background: blue;
-}*/
-
 #yellow {
     position: inherit;
     height: 210px;
@@ -62,14 +54,6 @@ body {
     border: solid 5px black;
     background: goldenrod;
 }
-
-/*.yellowButton {
-    
-}
-
-.lightYellow {
-    background: yellow;
-} */
 
 #red {
     position: inherit;
@@ -84,10 +68,6 @@ body {
 .bright {
     filter: brightness(150%);
 }
-
- /* .lightRed {
-    background: red;
-} */
     
 #green {
     position: inherit;
@@ -98,14 +78,6 @@ body {
     border: solid 5px black;
     background: darkgreen;
 }
-
-/*.greenButton {
-    
-}
-
-.lightGreen {
-    background: green;
-}*/
 
 #control-panel {
     position: absolute;
@@ -140,7 +112,16 @@ body {
     line-height: 20px;
 }
 
-.power {
+#power {
     color: black;
+    background-color: red;
+    border-radius: 10px;
+    width: 60px;
 }
 
+#start {
+    color: black;
+    background-color: green;
+    border-radius: 10px;
+    width: 60px;
+}

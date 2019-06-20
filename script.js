@@ -1,99 +1,79 @@
 $(document).ready(function() {
 
-    //    var on = false;
+    var on = false;
     var sequence = [];
     var cpuSequence = [];
     var userSequence = [];
     var success = false;
     var turn = 0;
+ //   var count = 1;
 
     //    var buttonClicked = true;
 
     // power on/off
 
-
-
-
     document.getElementById("power").onclick = function() { powerButton() };
-    //   $("#power").on('click', powerButton() {
+
     function powerButton() {
         var x = document.getElementById("power").classList.contains("change");
         console.log(x);
-        if (x == true) {
+        if (x == false) {
             console.log('on');
-            $('#power').removeClass("change");
-            powerOff();
-        }
-        else {
-            console.log('off');
+            on = true;
             $('#power').addClass("change");
             powerOn();
         }
-
-        //    function powerButton() {
-        //        if (('power').classList.contains("change")){ 
-        //            powerOff();
-        //            'powerButton'.classList.remove("change");
-        //        }
-        //        else {
-        //            powerOn();
-        //            'powerButton'.classList.add("change");
-        //        }
+        else {
+            console.log('off');
+            on = false;
+            $('#power').removeClass("change");
+            powerOff();
+        }
     }
 
-
-
-
-
-
-    //    $("#power").on('click', function() {
-    //        if ($('#power').hasClass('protected')) {
-    //            powerOn();
-    //        }
-    //        else {
-    //            powerOff();
-    //        }
-    //    });
-    //    buttonClicked = false;
-    //        $("#power").on('click', powerOn);
-
-    //      $("#power").off('click', powerOff());
-    //  });
-
     function powerOn() {
-        on = true;
-        alert("on");
-        $("#count").html('0');
-        sequence = [];
-        turn = 0;
-        userSequence = [];
-        cpuSequence = [];
-        startSimon();
-        //      x = false;
+        if (on == true) {
+            $("#count").html('0');
+            sequence = [];
+            turn = 0;
+            userSequence = [];
+            cpuSequence = [];
+            startSimon();
+            document.getElementById("start").disabled = false;
+   //         $("#start").disabled = false;
+            //      x = false;
+        }
+        else {
+            restart();
+        }
     }
 
     function powerOff() {
-        on = false;
-        alert("off");
         $('.colorButton').removeClass('bright'),
             $("#count").html('');
+            document.getElementById("start").disabled = true;
+ //           $("#start").disabled = true;
     }
 
     // press start button to begin
     function startSimon() {
-        $("#start").on("click", function() {
-            $("#count").html('1');
-            //        if (on || success) {
-            play();
-        });
+        if (on == true) {
+            $("#start").on("click", function() {
+                $("#count").html('1');
+                //        if (on || success) {
+                play();
+            });
+        }
     }
+
+
 
     // start play function by creating sequence of 20 from start button (from memory game, code insitute, wwschools)
 
     function play() {
         sequence = [];
-        //   var count = 1;
-        success = true;
+ //       var count = 1;
+        success = false;
         userSequence = [];
         cpuSequence = [];
         $("#count").html(turn);
@@ -110,50 +90,50 @@ $(document).ready(function() {
     }
 
     function makeBright() {
-        if (success == true) {
-            if (sequence[turn] == 1) {
-                cpuSequence.push(1);
-                console.log(cpuSequence);
-                $('#green').addClass('bright'),
-                    setTimeout(function() {
-                        $('#green').removeClass('bright');
-                    }, 800);
-            }
-            else if (sequence[turn] == 2) {
-                cpuSequence.push(2);
-                console.log(cpuSequence);
-                $('#blue').addClass('bright'),
-                    setTimeout(function() {
-                        $('#blue').removeClass('bright');
-                    }, 800);
-            }
-            else if (sequence[turn] == 3) {
-                cpuSequence.push(3);
-                console.log(cpuSequence);
-                $('#yellow').addClass('bright'),
-                    setTimeout(function() {
-                        $('#yellow').removeClass('bright');
-                    }, 800);
-            }
-            else if (sequence[turn] == 4) {
-                cpuSequence.push(4);
-                console.log(cpuSequence);
-                $('#red').addClass('bright'),
-                    setTimeout(function() {
-                        $('#red').removeClass('bright');
-                    }, 800);
-            }
-            turn++;
-            console.log(turn);
-            $("#count").html(turn);
-            userTurn();
-
+        //       if (success == true) {
+        if (sequence[turn] == 1) {
+            cpuSequence.push(1);
+            console.log(cpuSequence);
+            $('#green').addClass('bright'),
+                setTimeout(function() {
+                    $('#green').removeClass('bright');
+                }, 800);
         }
+        else if (sequence[turn] == 2) {
+            cpuSequence.push(2);
+            console.log(cpuSequence);
+            $('#blue').addClass('bright'),
+                setTimeout(function() {
+                    $('#blue').removeClass('bright');
+                }, 800);
+        }
+        else if (sequence[turn] == 3) {
+            cpuSequence.push(3);
+            console.log(cpuSequence);
+            $('#yellow').addClass('bright'),
+                setTimeout(function() {
+                    $('#yellow').removeClass('bright');
+                }, 800);
+        }
+        else if (sequence[turn] == 4) {
+            cpuSequence.push(4);
+            console.log(cpuSequence);
+            $('#red').addClass('bright'),
+                setTimeout(function() {
+                    $('#red').removeClass('bright');
+                }, 800);
+        }
+        turn++;
+        console.log(turn);
+        $("#count").html(turn);
+        userTurn();
+
+        //        }
     }
 
     function userTurn() {
-
-        if (success == true) {
+//        if (count == turn) {
+            //         if (success == true) {
 
             // user clicking lights (from code insitute module)
 
@@ -169,6 +149,9 @@ $(document).ready(function() {
                         $("#count").html(turn + 1);
                         success = true;
                         setTimeout(makeBright(), 500);
+                    }
+                    else if (userSequence.length == 20 && success == true) {
+                        win();
                     }
                     else {
                         console.log("wrong");
@@ -244,10 +227,10 @@ $(document).ready(function() {
                 });
 
             });
-        }
-        else {
-            restart();
-        }
+            //     }
+            //      else {
+            //            restart();
+  //      }
     }
 
     function end() {
@@ -257,18 +240,15 @@ $(document).ready(function() {
         turn = 0;
         $(".colorButton").addClass('bright');
         $("#count").html('LOST');
-        success = false;
-        restart();
+        setTimeout(restart, 3000);
 
     }
 
     function restart() {
-        if (success == false) {
-            //        setTimeout(
-            $("#count").html('0'); //, 3000);
-            //      setTimeout(
-            $(".colorButton").removeClass('bright'); //, 3000);
-        }
+        $("#count").html('0');
+        $(".colorButton").removeClass('bright');
+        console.log(cpuSequence);
+        console.log(userSequence);
     }
 
 });
