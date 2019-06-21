@@ -1,15 +1,15 @@
 $(document).ready(function() {
 
-    var sequence = [];
-    var cpuSequence = [];
-    var userSequence = [];
-    var success;
-    var turn;
-    var cpuTurn;
-    var playerTurn;
-    var bright;
-    var playSequence;
-    var win;
+    let sequence = [];
+    let cpuSequence = [];
+    let userSequence = [];
+    let success;
+    let turn;
+    let cpuTurn;
+    let playerTurn;
+    let bright;
+    let playSequence;
+    let win;
 
     // power on/off
 
@@ -18,19 +18,20 @@ $(document).ready(function() {
     function powerButton() {
         var x = document.getElementById("power").classList.contains("change");
         if (x == false) {
-            playerTurn = true;
+
             $('#power').addClass("change");
             powerOn();
         }
         else {
-            playerTurn = false;
-            clearInterval(playSequence);
+
+
             $('#power').removeClass("change");
             powerOff();
         }
     }
 
     function powerOn() {
+        playerTurn = true;
         $("#count").html('--');
         document.getElementById("start").disabled = false;
         document.getElementById("inner").disabled = false;
@@ -43,8 +44,11 @@ $(document).ready(function() {
     }
 
     function powerOff() {
+        playerTurn = false;
         $('.colorButton').removeClass('bright'),
             $("#count").html('');
+        clearInterval(playSequence);
+
 
         document.getElementById("start").disabled = true;
         document.getElementById("inner").disabled = true;
@@ -61,13 +65,13 @@ $(document).ready(function() {
         turn = 1;
         success = true;
         win = false;
-        $("#count").html(turn);
+        $("#count").html('1');
         for (var i = 0; i < 20; i++) {
             sequence.push(Math.floor(Math.random() * 4) + 1);
         }
         console.log(sequence);
         cpuTurn = true;
-        playSequence = setInterval(makeBright, 1000);
+        playSequence = setInterval(makeBright, 800);
     }
 
     function makeBright() {
@@ -81,155 +85,156 @@ $(document).ready(function() {
         if (cpuTurn) {
             $('.colorButton').removeClass('bright');
             setTimeout(function() {
-                if (sequence[turn] == 1) {
-                    cpuSequence.push(1);
-                    turn++;
-                    console.log(cpuSequence);
+                if (sequence[bright] == 1) {
+ //                   cpuSequence.push(1);
+//                    console.log(cpuSequence);
                     $('#green').addClass('bright'),
                         setTimeout(function() {
                             $('#green').removeClass('bright');
                         }, 800);
                 }
-                else if (sequence[turn] == 2) {
-                    cpuSequence.push(2);
-                    console.log(cpuSequence);
-                    turn++;
+                if (sequence[bright] == 2) {
+ //                   cpuSequence.push(2);
+//                    console.log(cpuSequence);
                     $('#blue').addClass('bright'),
                         setTimeout(function() {
                             $('#blue').removeClass('bright');
                         }, 800);
                 }
-                else if (sequence[turn] == 3) {
-                    cpuSequence.push(3);
-                    console.log(cpuSequence);
-                    turn++;
+                if (sequence[bright] == 3) {
+//                    cpuSequence.push(3);
+//                    console.log(cpuSequence);
                     $('#yellow').addClass('bright'),
                         setTimeout(function() {
                             $('#yellow').removeClass('bright');
                         }, 800);
                 }
-                else if (sequence[turn] == 4) {
-                    cpuSequence.push(4);
-                    console.log(cpuSequence);
-                    turn++;
+                if (sequence[bright] == 4) {
+//                    cpuSequence.push(4);
+//                    console.log(cpuSequence);
                     $('#red').addClass('bright'),
                         setTimeout(function() {
                             $('#red').removeClass('bright');
                         }, 800);
                 }
+                bright++;
             }, 200);
         }
     }
 
     // user clicking lights (from code insitute module)
-//    function userTurn() {
-//        bright = 0;
-//        console.log(turn);
-//        userSequence = [];
-        if (playerTurn == true && success == true) {
+    //    function userTurn() {
+    //        bright = 0;
+    //        console.log(turn);
+    //        userSequence = [];
 
-            $("#green").mousedown(function() {
-                $(this).addClass('bright'); // changes to light green
-                userSequence.push(1);
-                //       bright++;
-                console.log(userSequence);
-                $("#green").mouseup(function() {
-                    $(this).removeClass('bright'); //changes back
-                    compareArrays();
-                });
-            });
 
-            $("#blue").mousedown(function() {
-                userSequence.push(2);
-                //       bright++;
-                console.log(userSequence);
-                $(this).addClass('bright'); // changes to light blue
-                $("#blue").mouseup(function() {
-                    $(this).removeClass('bright'); //changes 
-                    compareArrays();
-                });
-            });
+    $("#green").mousedown(function() {
+        if (playerTurn) {
+            $(this).addClass('bright'); // changes to light green
+            userSequence.push(1);
+            console.log(userSequence);
+            $("#green").mouseup(function() {
+                $(this).removeClass('bright'); //changes back
+                compareArrays();
 
-            $("#yellow").mousedown(function() {
-                userSequence.push(3);
-                //     bright++;
-                console.log(userSequence);
-                $(this).addClass('bright'); // changes to light yellow
-                $("#yellow").mouseup(function() {
-                    $(this).removeClass('bright'); //changes back
-                    compareArrays();
-                });
             });
-
-            $("#red").mousedown(function() {
-                userSequence.push(4);
-                //        bright++;
-                console.log(userSequence);
-                $(this).addClass('bright'); // changes to light red
-                $("#red").mouseup(function() {
-                    $(this).removeClass('bright'); //changes back
-                    compareArrays();
-                });
-            });
-            bright++;
         }
-        playerTurn = false;
+    });
 
-    }
+    $("#blue").mousedown(function() {
+        if (playerTurn) {
+            userSequence.push(2);
+            console.log(userSequence);
+            $(this).addClass('bright'); // changes to light blue
+            $("#blue").mouseup(function() {
+                $(this).removeClass('bright'); //changes 
+                compareArrays();
+            });
+        }
+    });
+
+    $("#yellow").mousedown(function() {
+        if (playerTurn) {
+            userSequence.push(3);
+            console.log(userSequence);
+            $(this).addClass('bright'); // changes to light yellow
+            $("#yellow").mouseup(function() {
+                $(this).removeClass('bright'); //changes back
+                compareArrays();
+            });
+        }
+    });
+
+    $("#red").mousedown(function() {
+        if (playerTurn) {
+            userSequence.push(4);
+            console.log(userSequence);
+            $(this).addClass('bright'); // changes to light red
+            $("#red").mouseup(function() {
+                $(this).removeClass('bright'); //changes back
+                compareArrays();
+            });
+        }
+    });
 
     function compareArrays() {
-        console.log(userSequence.length);
-        console.log(cpuSequence.length);
-        console.log(bright);
-        console.log(turn);
-        if (userSequence.length == cpuSequence.length && bright == turn) {
-            if (userSequence.join() == cpuSequence.join()) {
-                if (turn == 20) {
-                    win();
-                    console.log("correct");
-                }
-                else {
 
-                    bright = 0;
-                    success = true;
-                    userSequence = [];
-                    cpuSequence = [];
-                    console.log(turn);
-                    $("#count").html(turn);
-                    setTimeout(makeBright(), 500);
-                }
-            }
+        if (userSequence[userSequence.length - 1] !== sequence[userSequence.length - 1]) success = false;
+        if (userSequence.length == 3 && success == true) {
+            winner();
         }
-        else {
-            console.log("wrong");
-            success = false;
+        if (success == false) {
             end();
         }
+
+        if (turn == userSequence.length && success && !win) {
+            turn++;
+            userSequence = [];
+            cpuTurn = true;
+            bright = 0;
+            $("#count").html(turn);
+            playSequence = setInterval(makeBright, 500);
+        }
+
+
+        //        else {
+
+        //          bright = 0;
+        //        success = true;
+        //      userSequence = [];
+        //    cpuSequence = [];
+        //  console.log(turn);
+        //            $("#count").html(turn);
+        //            setTimeout(makeBright(), 500);
     }
 
+
     function end() {
-        userSequence = [];
-        cpuSequence = [];
-        sequence = [];
-        turn = 0;
+        //        userSequence = [];
+        //        cpuSequence = [];
+        //        sequence = [];
+        //        turn = 0;
         $(".colorButton").addClass('bright');
-        $("#count").html('LOST');
-        //      setTimeout(restart, 3000);
+        $("#count").html('LOSE');
+        setTimeout(restart, 3000);
     }
 
     function restart() {
-        //        window.location.reload();
+        window.location.reload();
         powerOn();
-        //       $("#count").html('0');
-        //       $(".colorButton").removeClass('bright');
+        $("#count").html('0');
+        $(".colorButton").removeClass('bright');
         //        console.log(cpuSequence);
         //        console.log(userSequence);
         //        cpuTurn = true;
     }
 
-    function win() {
+    function winner() {
         $(".colorButton").addClass('bright');
         $("#count").html('WIN!');
+        playerTurn = false;
+        win = true;
         setTimeout(restart, 3000);
     }
 
