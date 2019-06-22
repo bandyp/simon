@@ -78,11 +78,11 @@ border:5px solid black;
 
 #circumference {
     position: absolute;
-    background-color: black;
+    background-color: gray;
     height: 80vw;
     width: 80vw;
     border-radius: 50%;
-    
+
     border: solid 0px black;
     box-shadow: 20px 10px 60px black;
     margin: 0;
@@ -101,31 +101,31 @@ border:5px solid black;
     position: inherit;
     height: 40vw;
     width: 40vw;
-    border-radius: 100% 0 0 0;
+    border-radius: 100% 5% 5% 5%;
     top: 50%;
     margin: 0px 0px 0px 0px;
-    border: solid 1vw black;
-    background: darkblue;
+    border: solid 1vw gray;
+    background-image: radial-gradient(circle, rgba(25, 25, 142, 1), rgba(25, 25, 92, 1));
 }
 
 #yellow {
     position: inherit;
     height: 40vw;
     width: 40vw;
-    border-radius: 0 100% 0 0;
+    border-radius: 5% 100% 5% 5%;
     margin: -40vw 0px 0px 40vw;
-    border: solid 1vw black;
-    background: goldenrod;
+    border: solid 1vw gray;
+    background-image: radial-gradient(circle, rgba(178, 195, 62, 1), rgba(238, 165, 32, 1));
 }
 
 #red {
     position: inherit;
     height: 40vw;
     width: 40vw;
-    border-radius: 0 0 100% 0;
+    border-radius: 5% 5% 100% 5%;
     margin: -40vw 0px 40vw 40vw;
-    border: solid 1vw black;
-    background: darkred;
+    border: solid 1vw gray;
+    background-image: radial-gradient(circle, rgba(139, 0, 0, 1), rgba(99, 0, 0, 1));
 }
 
 .bright {
@@ -136,10 +136,10 @@ border:5px solid black;
     position: inherit;
     height: 40vw;
     width: 40vw;
-    border-radius: 0 0 0 100%;
+    border-radius: 5% 5% 5% 100%;
     margin: 0 0 0 0;
-    border: solid 1vw black;
-    background: darkgreen;
+    border: solid 1vw gray;
+    background-image: radial-gradient(circle, rgba(0, 100, 0, 1), rgba(0, 60, 0, 1));
 }
 
 .colorButton {
@@ -152,15 +152,17 @@ border:5px solid black;
     height: 40vw;
     width: 40vw;
     border-radius: 50%;
-    border: solid 1vh black;
+    border: solid 1vh lightgray;
     z-index: 1;
     margin: 20vw 0px 0px 20vw;
     clear: both;
-    /*   box-shadow: 20px 10px 60px black; */
+    box-shadow: 0px 0px 10px gray;
 }
 
 #title {
     font-size: 6vw;
+    margin-top: 2vw;
+    font-family: 'Courgette', cursive;
 }
 
 .count {

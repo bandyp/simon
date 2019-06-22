@@ -86,32 +86,28 @@ $(document).ready(function() {
             $('.colorButton').removeClass('bright');
             setTimeout(function() {
                 if (sequence[bright] == 1) {
- //                   cpuSequence.push(1);
-//                    console.log(cpuSequence);
+                    $('#soundGreen')[0].play();
                     $('#green').addClass('bright'),
                         setTimeout(function() {
                             $('#green').removeClass('bright');
                         }, 800);
                 }
                 if (sequence[bright] == 2) {
- //                   cpuSequence.push(2);
-//                    console.log(cpuSequence);
+                    $('#soundBlue')[0].play();
                     $('#blue').addClass('bright'),
                         setTimeout(function() {
                             $('#blue').removeClass('bright');
                         }, 800);
                 }
                 if (sequence[bright] == 3) {
-//                    cpuSequence.push(3);
-//                    console.log(cpuSequence);
+                    $('#soundYellow')[0].play();
                     $('#yellow').addClass('bright'),
                         setTimeout(function() {
                             $('#yellow').removeClass('bright');
                         }, 800);
                 }
                 if (sequence[bright] == 4) {
-//                    cpuSequence.push(4);
-//                    console.log(cpuSequence);
+                    $('#soundRed')[0].play();
                     $('#red').addClass('bright'),
                         setTimeout(function() {
                             $('#red').removeClass('bright');
@@ -132,6 +128,7 @@ $(document).ready(function() {
     $("#green").mousedown(function() {
         if (playerTurn) {
             $(this).addClass('bright'); // changes to light green
+            $('#soundGreen')[0].play();
             userSequence.push(1);
             console.log(userSequence);
             $("#green").mouseup(function() {
@@ -145,6 +142,7 @@ $(document).ready(function() {
     $("#blue").mousedown(function() {
         if (playerTurn) {
             userSequence.push(2);
+            $('#soundBlue')[0].play();
             console.log(userSequence);
             $(this).addClass('bright'); // changes to light blue
             $("#blue").mouseup(function() {
@@ -157,6 +155,7 @@ $(document).ready(function() {
     $("#yellow").mousedown(function() {
         if (playerTurn) {
             userSequence.push(3);
+            $('#soundYellow')[0].play();
             console.log(userSequence);
             $(this).addClass('bright'); // changes to light yellow
             $("#yellow").mouseup(function() {
@@ -169,6 +168,7 @@ $(document).ready(function() {
     $("#red").mousedown(function() {
         if (playerTurn) {
             userSequence.push(4);
+            $('#soundRed')[0].play();
             console.log(userSequence);
             $(this).addClass('bright'); // changes to light red
             $("#red").mouseup(function() {
@@ -181,7 +181,7 @@ $(document).ready(function() {
     function compareArrays() {
 
         if (userSequence[userSequence.length - 1] !== sequence[userSequence.length - 1]) success = false;
-        if (userSequence.length == 3 && success == true) {
+        if (userSequence.length == 6 && success == true) {
             winner();
         }
         if (success == false) {
