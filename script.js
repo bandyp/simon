@@ -34,7 +34,6 @@ $(document).ready(function() {
         playerTurn = true;
         $("#count").html('--');
         document.getElementById("start").disabled = false;
-   //     document.getElementById("inner").disabled = false;
         $("#start").on("click", function() {
             $("#count").html('1');
             if (playerTurn || success) {
@@ -51,7 +50,6 @@ $(document).ready(function() {
 
 
         document.getElementById("start").disabled = true;
-   //     document.getElementById("inner").disabled = true;
         window.location.reload();
     }
 
@@ -73,6 +71,8 @@ $(document).ready(function() {
         cpuTurn = true;
         playSequence = setInterval(makeBright, 800);
     }
+
+// function which allows cpu to select color and sound
 
     function makeBright() {
         playerTurn = false;
@@ -119,15 +119,20 @@ $(document).ready(function() {
     }
 
     // user clicking lights (from code insitute module)
+// element.on('touchstart mousedown', function(e) {
+//    e.preventDefault();
+//    someAction();
+//});
 
-
-    $("#green").on("mousedown touchstart", function() {
+    $("#green").on("mousedown touchstart", function(e) {
+        e.preventDefault();
         if (playerTurn) {
             $(this).addClass('bright'); // changes to light green
             $('#soundGreen')[0].play();
             userSequence.push(1);
             console.log(userSequence);
-            $("#green").on("mouseup touchend", function() {
+            $("#green").on("mouseup touchend", function(e) {
+                e.preventDefault();
                 $(this).removeClass('bright'); //changes back
                 compareArrays();
 
@@ -135,44 +140,53 @@ $(document).ready(function() {
         }
     });
 
-    $("#blue").on("mousedown touchstart", function() {
+    $("#blue").on("mousedown touchstart", function(e) {
+        e.preventDefault();
         if (playerTurn) {
             userSequence.push(2);
             $('#soundBlue')[0].play();
             console.log(userSequence);
             $(this).addClass('bright'); // changes to light blue
-            $("#blue").on("mouseup touchend", function() {
+            $("#blue").on("mouseup touchend", function(e) {
+                e.preventDefault();
                 $(this).removeClass('bright'); //changes 
                 compareArrays();
             });
         }
     });
 
-    $("#yellow").on("mousedown touchstart", function() {
+    $("#yellow").on("mousedown touchstart", function(e) {
+        e.preventDefault();
         if (playerTurn) {
             userSequence.push(3);
             $('#soundYellow')[0].play();
             console.log(userSequence);
             $(this).addClass('bright'); // changes to light yellow
-            $("#yellow").on("mouseup touchend", function() {
+            $("#yellow").on("mouseup touchend", function(e) {
+                e.preventDefault();
                 $(this).removeClass('bright'); //changes back
                 compareArrays();
             });
         }
     });
 
-    $("#red").on("mousedown touchstart", function() {
+    $("#red").on("mousedown touchstart", function(e) {
+        e.preventDefault();
         if (playerTurn) {
             userSequence.push(4);
             $('#soundRed')[0].play();
             console.log(userSequence);
             $(this).addClass('bright'); // changes to light red
-            $("#red").on("mouseup touchend", function() {
+            $("#red").on("mouseup touchend", function(e) {
+                e.preventDefault();
                 $(this).removeClass('bright'); //changes back
                 compareArrays();
             });
         }
     });
+
+// checks that user has clicked the correct color in the sequence 
+
 
     function compareArrays() {
 
@@ -193,24 +207,11 @@ $(document).ready(function() {
             playSequence = setInterval(makeBright, 800);
         }
 
-
-        //        else {
-
-        //          bright = 0;
-        //        success = true;
-        //      userSequence = [];
-        //    cpuSequence = [];
-        //  console.log(turn);
-        //            $("#count").html(turn);
-        //            setTimeout(makeBright(), 500);
     }
 
 
     function end() {
-        //        userSequence = [];
-        //        cpuSequence = [];
-        //        sequence = [];
-        //        turn = 0;
+
         $(".colorButton").addClass('bright');
         $("#count").html('LOSE');
         setTimeout(restart, 3000);
@@ -221,9 +222,7 @@ $(document).ready(function() {
         powerOn();
         $("#count").html('0');
         $(".colorButton").removeClass('bright');
-        //        console.log(cpuSequence);
-        //        console.log(userSequence);
-        //        cpuTurn = true;
+
     }
 
     function winner() {
