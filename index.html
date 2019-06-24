@@ -26,30 +26,34 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col 8 offset-2">
-                <div id="circumference">
-                    <ul id="inner">
-                        <li id="blue" class="colorButton blueButton"></li>
-                        <li id="yellow" class="colorButton yellowButton"></li>
-                        <li id="green" class="colorButton greenButton"></li>
-                        <li id="red" class="colorButton redButton"></li>
-                    </ul>
-                </div>
-                <div id="control-panel">
-                    <div id="title">
-                        <p>SIMON!<p>
-                    </div>
-                    <div id="buttons">
-                        <button class="power" id="power">Power</button>
-                        <button id="start">Start</button>
-                    </div>
-                    <div id="count"></div>
-                    <div class="count">Count</div>
-                </div>
+        <div class="col-8 offset-2 control" id="control-panel">
+            <div id="title">
+                <p>SIMON!
+                    <p>
             </div>
+            <div id="buttons">
+                <button class="power" id="power">Power</button>
+                <button id="start">Start</button>
+            </div>
+            <div id="count"></div>
+            <div class="count">Count</div>
         </div>
+        <div class="row">
+            <div class="col-4 offset-2 colorButton blueButton" id="blue"></div>
+            <div class="col-4 colorButton yellowButton" id="yellow"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-4 offset-2 colorButton greenButton" offset-2 id="green"></div>
+            <div class="col-4 colorButton redButton" id="red"></div>
+
+        </div>
+        <div class="row">
+
+        </div>
+
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

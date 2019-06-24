@@ -34,7 +34,7 @@ $(document).ready(function() {
         playerTurn = true;
         $("#count").html('--');
         document.getElementById("start").disabled = false;
-        document.getElementById("inner").disabled = false;
+   //     document.getElementById("inner").disabled = false;
         $("#start").on("click", function() {
             $("#count").html('1');
             if (playerTurn || success) {
@@ -51,7 +51,7 @@ $(document).ready(function() {
 
 
         document.getElementById("start").disabled = true;
-        document.getElementById("inner").disabled = true;
+   //     document.getElementById("inner").disabled = true;
         window.location.reload();
     }
 
@@ -90,28 +90,28 @@ $(document).ready(function() {
                     $('#green').addClass('bright'),
                         setTimeout(function() {
                             $('#green').removeClass('bright');
-                        }, 2000);
+                        }, 1000);
                 }
                 if (sequence[bright] == 2) {
                     $('#soundBlue')[0].play();
                     $('#blue').addClass('bright'),
                         setTimeout(function() {
                             $('#blue').removeClass('bright');
-                        }, 2000);
+                        }, 1000);
                 }
                 if (sequence[bright] == 3) {
                     $('#soundYellow')[0].play();
                     $('#yellow').addClass('bright'),
                         setTimeout(function() {
                             $('#yellow').removeClass('bright');
-                        }, 2000);
+                        }, 1000);
                 }
                 if (sequence[bright] == 4) {
                     $('#soundRed')[0].play();
                     $('#red').addClass('bright'),
                         setTimeout(function() {
                             $('#red').removeClass('bright');
-                        }, 2000);
+                        }, 1000);
                 }
                 bright++;
             }, 400);
@@ -121,13 +121,13 @@ $(document).ready(function() {
     // user clicking lights (from code insitute module)
 
 
-    $("#green").bind("mousedown touch", function() {
+    $("#green").on("mousedown touchstart", function() {
         if (playerTurn) {
             $(this).addClass('bright'); // changes to light green
             $('#soundGreen')[0].play();
             userSequence.push(1);
             console.log(userSequence);
-            $("#green").mouseup(function() {
+            $("#green").on("mouseup touchend", function() {
                 $(this).removeClass('bright'); //changes back
                 compareArrays();
 
@@ -135,39 +135,39 @@ $(document).ready(function() {
         }
     });
 
-    $("#blue").bind("mousedown touch", function() {
+    $("#blue").on("mousedown touchstart", function() {
         if (playerTurn) {
             userSequence.push(2);
             $('#soundBlue')[0].play();
             console.log(userSequence);
             $(this).addClass('bright'); // changes to light blue
-            $("#blue").mouseup(function() {
+            $("#blue").on("mouseup touchend", function() {
                 $(this).removeClass('bright'); //changes 
                 compareArrays();
             });
         }
     });
 
-    $("#yellow").bind("mousedown touch", function() {
+    $("#yellow").on("mousedown touchstart", function() {
         if (playerTurn) {
             userSequence.push(3);
             $('#soundYellow')[0].play();
             console.log(userSequence);
             $(this).addClass('bright'); // changes to light yellow
-            $("#yellow").mouseup(function() {
+            $("#yellow").on("mouseup touchend", function() {
                 $(this).removeClass('bright'); //changes back
                 compareArrays();
             });
         }
     });
 
-    $("#red").bind("mousedown touch", function() {
+    $("#red").on("mousedown touchstart", function() {
         if (playerTurn) {
             userSequence.push(4);
             $('#soundRed')[0].play();
             console.log(userSequence);
             $(this).addClass('bright'); // changes to light red
-            $("#red").mouseup(function() {
+            $("#red").on("mouseup touchend", function() {
                 $(this).removeClass('bright'); //changes back
                 compareArrays();
             });
@@ -190,7 +190,7 @@ $(document).ready(function() {
             cpuTurn = true;
             bright = 0;
             $("#count").html(turn);
-            playSequence = setInterval(makeBright, 500);
+            playSequence = setInterval(makeBright, 800);
         }
 
 

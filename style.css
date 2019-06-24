@@ -3,7 +3,7 @@ body {
     width: 100%;
     overflow-x: hidden;
     height: 100%;
-    background-image: url("coffeeTable.jpg"); 
+    background-image: url("whiteTable.jpg"); 
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
@@ -34,16 +34,13 @@ body {
     height: 100%;
 }
 
-.row {
-    height: 100%;
-}
 
 .col {
     margin: 0 auto;
     text-align: center;
 }
 
-#circumference {
+/* #circumference {
     position: fixed;
     background-color: rgb(232, 232, 232);
     height: 80vh;
@@ -58,7 +55,7 @@ body {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
-
+*/
 #inner {
     list-style-type: none;
     display: inline-block;
@@ -66,31 +63,31 @@ body {
 
 #blue {
     position: relative;
-    height: 40vh;
+    margin-top: auto;
+    height: 30vh;
     width: 40vh;
     border-radius: 100% 5% 5% 5%;
-    top: 50%;
-    margin: 0px 0px 0px 0px;
     border: solid 1vh rgb(232, 232, 232);
     background-image: radial-gradient(circle, rgba(25, 25, 142, 1), rgba(25, 25, 92, 1));
 }
 
 #yellow {
     position: relative;
-    height: 40vh;
+    margin-top: auto;
+    height: 30vh;
     width: 40vh;
     border-radius: 5% 100% 5% 5%;
-    margin: -40vh 0px 0px 40vh;
     border: solid 1vh rgb(232, 232, 232);
     background-image: radial-gradient(circle, rgba(178, 195, 62, 1), rgba(238, 165, 32, 1));
 }
 
 #red {
     position: relative;
-    height: 40vh;
+    margin-bottom: 1vh;
+    height: 30vh;
     width: 40vh;
     border-radius: 5% 5% 100% 5%;
-    margin: -40vh 0px 40vh 40vh;
+  /*  margin: -40vh 0px 40vh 40vh; */
     border: solid 1vh rgb(232, 232, 232);
     background-image: radial-gradient(circle, rgba(139, 0, 0, 1), rgba(99, 0, 0, 1));
 }
@@ -101,10 +98,10 @@ body {
 
 #green {
     position: relative;
-    height: 40vh;
+    margin-bottom: 1vh;
+    height: 30vh;
     width: 40vh;
     border-radius: 5% 5% 5% 100%;
-    margin: 0 0 0 0;
     border: solid 1vh rgb(232, 232, 232);
     background-image: radial-gradient(circle, rgba(0, 100, 0, 1), rgba(0, 60, 0, 1));
 }
@@ -114,14 +111,14 @@ body {
 }
 
 #control-panel {
-    position: relative;
-    background-color: rgb(232, 232, 232);
+    background-color: rgb(200, 200, 200);
     height: 40vh;
-    width: 40vh;
+    max-width: 40vh;
+    text-align: center;
     border-radius: 50%;
     /*  border: solid 1vh lightgray; */
-    z-index: 1;
-    margin: 30vh 0px 0px 20vh;
+    z-index: 2;
+    margin: 0 auto;
     clear: both;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
     border-bottom: solid 1vh rgb(47, 79, 79);
@@ -173,10 +170,11 @@ button:active {
 #count {
     position: absolute;
     background: black;
+    display: inline-block;
     height: 8vh;
     width: 15vh;
-    margin-left: 13vh;
-    margin-top: 5vh;
+    margin-left: -20vh;
+    margin-top: 13vh;
     color: red;
     font-family: 'Orbitron', sans-serif;
     font-size: 4vh;
