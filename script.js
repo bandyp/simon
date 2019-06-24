@@ -90,42 +90,38 @@ $(document).ready(function() {
                     $('#green').addClass('bright'),
                         setTimeout(function() {
                             $('#green').removeClass('bright');
-                        }, 800);
+                        }, 2000);
                 }
                 if (sequence[bright] == 2) {
                     $('#soundBlue')[0].play();
                     $('#blue').addClass('bright'),
                         setTimeout(function() {
                             $('#blue').removeClass('bright');
-                        }, 800);
+                        }, 2000);
                 }
                 if (sequence[bright] == 3) {
                     $('#soundYellow')[0].play();
                     $('#yellow').addClass('bright'),
                         setTimeout(function() {
                             $('#yellow').removeClass('bright');
-                        }, 800);
+                        }, 2000);
                 }
                 if (sequence[bright] == 4) {
                     $('#soundRed')[0].play();
                     $('#red').addClass('bright'),
                         setTimeout(function() {
                             $('#red').removeClass('bright');
-                        }, 800);
+                        }, 2000);
                 }
                 bright++;
-            }, 200);
+            }, 400);
         }
     }
 
     // user clicking lights (from code insitute module)
-    //    function userTurn() {
-    //        bright = 0;
-    //        console.log(turn);
-    //        userSequence = [];
 
 
-    $("#green").mousedown(function() {
+    $("#green").bind("mousedown touch", function() {
         if (playerTurn) {
             $(this).addClass('bright'); // changes to light green
             $('#soundGreen')[0].play();
@@ -139,7 +135,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#blue").mousedown(function() {
+    $("#blue").bind("mousedown touch", function() {
         if (playerTurn) {
             userSequence.push(2);
             $('#soundBlue')[0].play();
@@ -152,7 +148,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#yellow").mousedown(function() {
+    $("#yellow").bind("mousedown touch", function() {
         if (playerTurn) {
             userSequence.push(3);
             $('#soundYellow')[0].play();
@@ -165,7 +161,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#red").mousedown(function() {
+    $("#red").bind("mousedown touch", function() {
         if (playerTurn) {
             userSequence.push(4);
             $('#soundRed')[0].play();
