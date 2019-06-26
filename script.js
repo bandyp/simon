@@ -10,8 +10,16 @@ $(document).ready(function() {
     let bright;
     let playSequence;
     let win;
+    let highScore = 0;
 
-    // power on/off
+// Help Alert box
+    
+$("#helpBox").hide();
+$("#helpButton").click(function(){
+    $("#helpBox").show();
+});
+
+// power on/off
 
     document.getElementById("power").onclick = function() { powerButton() };
 
@@ -36,6 +44,7 @@ $(document).ready(function() {
         document.getElementById("start").disabled = false;
         $("#start").on("click", function() {
             $("#count").html('1');
+            console.log(highScore);
             if (playerTurn || success) {
                 play();
             }
@@ -119,10 +128,6 @@ $(document).ready(function() {
     }
 
     // user clicking lights (from code insitute module)
-// element.on('touchstart mousedown', function(e) {
-//    e.preventDefault();
-//    someAction();
-//});
 
     $("#green").on("mousedown touchstart", function(e) {
         e.preventDefault();
@@ -214,6 +219,7 @@ $(document).ready(function() {
 
         $(".colorButton").addClass('bright');
         $("#count").html('LOSE');
+        checkHighScore();
         setTimeout(restart, 3000);
     }
 
@@ -228,9 +234,17 @@ $(document).ready(function() {
     function winner() {
         $(".colorButton").addClass('bright');
         $("#count").html('WIN!');
+        checkHighScore();
         playerTurn = false;
         win = true;
         setTimeout(restart, 3000);
+    }
+    
+    function checkHighScore(highScore, turn) {
+        if (highScore < turn) {
+            highScore = turn;
+            console.log(highScore);
+        }
     }
 
 });

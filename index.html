@@ -10,47 +10,62 @@
     <link rel="stylesheet" href="style.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
-</head>
-<audio id="soundGreen">
+
+    <audio id="soundGreen">
   	<source src="simonSound1.mp3"></source>
   </audio>
-<audio id="soundBlue">
+    <audio id="soundBlue">
   	<source src="simonSound2.mp3"></source>
   </audio>
-<audio id="soundYellow">
+    <audio id="soundYellow">
   	<source src="simonSound3.mp3"></source>
   </audio>
-<audio id="soundRed">
+    <audio id="soundRed">
   	<source src="simonSound4.mp3"></source>
   </audio>
 
+</head>
+
+
+
 <body>
     <div class="container-fluid">
-        <div class="col-8 offset-2 control" id="control-panel">
-            <div id="title">
-                <p>SIMON!
-                    <p>
-            </div>
-            <div id="buttons">
-                <button class="power" id="power">Power</button>
-                <button id="start">Start</button>
-            </div>
-            <div id="count"></div>
-            <div class="count">Count</div>
+        <button type="button" class="btn btn-primary btn-lg active" id="helpButton">Help?</button>
+        <div class="alert alert-info alert-dismissible fade show" id="helpBox" role="alert">
+            <h5>Follow Simon on his quest to count!</h5>
+            <p>His belly will light up as he counts from 1 to 20. Help him on his way by repeating his pattern. It starts off easy, but gets very difficult towards the end.</p>
+            <hr>
+            <p>Will you get the high score? Press start to find out.</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+  </button>
         </div>
-        <div class="row">
+
+        <div class="row row-no-gutters">
+            <div class="col-8 offset-2 control" id="control-panel">
+                <div id="title">
+                    <p>SIMON!<p>
+                </div>
+                <div id="buttons">
+                    <button class="power" id="power">Power</button>
+                    <button id="start">Start</button>
+                </div>
+                <div id="count"></div>
+                <div class="count">Count</div>
+            </div>
+        </div>
+        <div class="row row-no-gutter">
             <div class="col-4 offset-2 colorButton blueButton" id="blue"></div>
             <div class="col-4 colorButton yellowButton" id="yellow"></div>
         </div>
 
-        <div class="row">
+        <div class="row row-no-gutter">
             <div class="col-4 offset-2 colorButton greenButton" offset-2 id="green"></div>
             <div class="col-4 colorButton redButton" id="red"></div>
 
         </div>
-        <div class="row">
 
-        </div>
+
+
 
     </div>
 

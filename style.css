@@ -3,19 +3,11 @@ body {
     width: 100%;
     overflow-x: hidden;
     height: 100%;
-    background-image: url("whiteTable.jpg"); 
+    background-image: url("whiteTable2.jpg"); 
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
 }
-
-/*body {
-    background-image: url("coffeeTable.jpg");
-    background-position: center;
-    background-repeat: repeat;
-    background-size: cover;
-}
-*/
 
 * {
     margin: 0;
@@ -23,15 +15,12 @@ body {
     box-sizing: border-box;
 }
 
-/*html {
-    background-image: url("coffeeTable.jpg");
-    background-position: center;
-    background-repeat: repeat;
-    background-size: cover;
-}
-*/
 .container-fluid {
     height: 100%;
+}
+
+#helpButton {
+    margin-top: 50px;
 }
 
 
@@ -83,7 +72,7 @@ body {
 
 #red {
     position: relative;
-    margin-bottom: 1vh;
+    margin-bottom: 50px;
     height: 30vh;
     width: 40vh;
     border-radius: 5% 5% 100% 5%;
@@ -98,7 +87,7 @@ body {
 
 #green {
     position: relative;
-    margin-bottom: 1vh;
+    margin-bottom: 50px;
     height: 30vh;
     width: 40vh;
     border-radius: 5% 5% 5% 100%;
@@ -145,7 +134,7 @@ body {
 
 button {
     display: inline-block;
-    font-size: 24px;
+  /*  font-size: 24px; */
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -172,8 +161,8 @@ button:active {
     background: black;
     display: inline-block;
     height: 8vh;
-    width: 15vh;
-    margin-left: -20vh;
+    width: 12vh;
+    margin-left: -22vh;
     margin-top: 13vh;
     color: red;
     font-family: 'Orbitron', sans-serif;
@@ -188,7 +177,7 @@ button:active {
     color: black;
     background-color: red;
     border-radius: 2vh;
-    width: 12vh;
+    width: 15vh;
     height: 7vh;
 }
 
@@ -196,31 +185,6 @@ button:active {
     color: black;
     background-color: green;
     border-radius: 2vh;
-    width: 12vh;
+    width: 15vh;
     height: 7vh;
-}
-
-
-#blue-sq {
-    height: 10vh;
-    width: 10vh;
-    background-color: blue;
-}
-
-#red-sq {
-    height: 10vh;
-    width: 10vh;
-    background-color: red;
-}
-
-#yellow-sq {
-    height: 10vh;
-    width: 10vh;
-    background-color: yellow;
-}
-
-#green-sq {
-    height: 10vh;
-    width: 10vh;
-    background-color: green;
 }
