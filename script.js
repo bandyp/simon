@@ -12,14 +12,24 @@ $(document).ready(function() {
     let win;
     let highScore = 0;
 
-// Help Alert box
-    
-$("#helpBox").hide();
-$("#helpButton").click(function(){
-    $("#helpBox").show();
-});
+    function checkHighScore() {
+        if (highScore < bright) {
+            highScore = bright;
+            $("#highScoreBox").html(highScore - 1);
+        }
+    }
 
-// power on/off
+    // Help Alert box
+
+    $("#helpBox").hide();
+    $("#helpButton").mouseover(function() {
+        $("#helpBox").show();
+        $("#helpButton").mouseleave(function() {
+            $("#helpBox").hide();
+        });
+    });
+
+    // power on/off
 
     document.getElementById("power").onclick = function() { powerButton() };
 
@@ -44,7 +54,6 @@ $("#helpButton").click(function(){
         document.getElementById("start").disabled = false;
         $("#start").on("click", function() {
             $("#count").html('1');
-            console.log(highScore);
             if (playerTurn || success) {
                 play();
             }
@@ -56,10 +65,7 @@ $("#helpButton").click(function(){
         $('.colorButton').removeClass('bright'),
             $("#count").html('');
         clearInterval(playSequence);
-
-
         document.getElementById("start").disabled = true;
-        window.location.reload();
     }
 
     // start play function by creating sequence of 20 from start button (from memory game, code insitute, wwschools)
@@ -81,7 +87,7 @@ $("#helpButton").click(function(){
         playSequence = setInterval(makeBright, 800);
     }
 
-// function which allows cpu to select color and sound
+    // function which allows cpu to select color and sound
 
     function makeBright() {
         playerTurn = false;
@@ -190,16 +196,19 @@ $("#helpButton").click(function(){
         }
     });
 
-// checks that user has clicked the correct color in the sequence 
+    // checks that user has clicked the correct color in the sequence 
 
 
     function compareArrays() {
 
         if (userSequence[userSequence.length - 1] !== sequence[userSequence.length - 1]) success = false;
         if (userSequence.length == 6 && success == true) {
+            checkHighScore();
             winner();
         }
         if (success == false) {
+            checkHighScore();
+            sequence = [];
             end();
         }
 
@@ -214,19 +223,21 @@ $("#helpButton").click(function(){
 
     }
 
+    // wine, lose, high score and restart functiond
 
     function end() {
 
         $(".colorButton").addClass('bright');
         $("#count").html('LOSE');
-        checkHighScore();
+        playerTurn = false;
+        win = false;
         setTimeout(restart, 3000);
     }
 
     function restart() {
-        window.location.reload();
         powerOn();
-        $("#count").html('0');
+        sequence = [];
+        $("#count").html('--');
         $(".colorButton").removeClass('bright');
 
     }
@@ -239,12 +250,8 @@ $("#helpButton").click(function(){
         win = true;
         setTimeout(restart, 3000);
     }
-    
-    function checkHighScore(highScore, turn) {
-        if (highScore < turn) {
-            highScore = turn;
-            console.log(highScore);
-        }
-    }
+
+
+
 
 });

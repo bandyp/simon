@@ -3,7 +3,7 @@ body {
     width: 100%;
     overflow-x: hidden;
     height: 100%;
-    background-image: url("whiteTable2.jpg"); 
+    background-color: white;
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
@@ -20,31 +20,38 @@ body {
 }
 
 #helpButton {
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
+#highScore {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 3vh;
+}
+
+
+#highScoreBox {
+    float: right;
+    background: black;
+    margin-top: 10px;
+    margin-right: 10px;
+    height: 8vh;
+    width: 14vh;
+    color: red;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4vh;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 7vh;
+    border-radius: 2vh;
+}
 
 .col {
     margin: 0 auto;
     text-align: center;
 }
 
-/* #circumference {
-    position: fixed;
-    background-color: rgb(232, 232, 232);
-    height: 80vh;
-    width: 80vh;
-    border-radius: 50%;
-
-    border: solid 0px black;
-    box-shadow: 20px 10px 60px black;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-*/
 #inner {
     list-style-type: none;
     display: inline-block;
@@ -76,7 +83,7 @@ body {
     height: 30vh;
     width: 40vh;
     border-radius: 5% 5% 100% 5%;
-  /*  margin: -40vh 0px 40vh 40vh; */
+    /*  margin: -40vh 0px 40vh 40vh; */
     border: solid 1vh rgb(232, 232, 232);
     background-image: radial-gradient(circle, rgba(139, 0, 0, 1), rgba(99, 0, 0, 1));
 }
@@ -105,7 +112,6 @@ body {
     max-width: 40vh;
     text-align: center;
     border-radius: 50%;
-    /*  border: solid 1vh lightgray; */
     z-index: 2;
     margin: 0 auto;
     clear: both;
@@ -134,7 +140,7 @@ body {
 
 button {
     display: inline-block;
-  /*  font-size: 24px; */
+    /*  font-size: 24px; */
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -161,7 +167,7 @@ button:active {
     background: black;
     display: inline-block;
     height: 8vh;
-    width: 12vh;
+    width: 14vh;
     margin-left: -22vh;
     margin-top: 13vh;
     color: red;
