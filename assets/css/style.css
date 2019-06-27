@@ -34,8 +34,8 @@ body {
 #highScoreBox {
     float: right;
     background: black;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
     height: 8vh;
     width: 14vh;
     color: red;
@@ -168,7 +168,7 @@ button:active {
     display: inline-block;
     height: 8vh;
     width: 14vh;
-    margin-left: -22vh;
+    margin-left: -17vh;
     margin-top: 13vh;
     color: red;
     font-family: 'Orbitron', sans-serif;
@@ -183,7 +183,7 @@ button:active {
     color: black;
     background-color: red;
     border-radius: 2vh;
-    width: 15vh;
+    width: 10vh;
     height: 7vh;
 }
 
@@ -191,6 +191,6 @@ button:active {
     color: black;
     background-color: green;
     border-radius: 2vh;
-    width: 15vh;
+    width: 10vh;
     height: 7vh;
 }

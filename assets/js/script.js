@@ -50,18 +50,24 @@ $(document).ready(function() {
 
     function powerOn() {
         playerTurn = true;
+        cpuTurn = true;
+        /*       sequence = [];
+               userSequence = [];*/
         $("#count").html('--');
         document.getElementById("start").disabled = false;
-        $("#start").on("click", function() {
-            $("#count").html('1');
-            if (playerTurn || success) {
-                play();
-            }
-        });
     }
+
+    $("#start").on("click", function() {
+        $("#count").html('1');
+        if (playerTurn || cpuTurn || success) {
+            play();
+        }
+    });
+
 
     function powerOff() {
         playerTurn = false;
+        cpuTurn = false;
         $('.colorButton').removeClass('bright'),
             $("#count").html('');
         clearInterval(playSequence);
@@ -82,7 +88,7 @@ $(document).ready(function() {
         for (var i = 0; i < 20; i++) {
             sequence.push(Math.floor(Math.random() * 4) + 1);
         }
-        console.log(sequence);
+
         cpuTurn = true;
         playSequence = setInterval(makeBright, 800);
     }
@@ -141,7 +147,7 @@ $(document).ready(function() {
             $(this).addClass('bright'); // changes to light green
             $('#soundGreen')[0].play();
             userSequence.push(1);
-            console.log(userSequence);
+
             $("#green").on("mouseup touchend", function(e) {
                 e.preventDefault();
                 $(this).removeClass('bright'); //changes back
@@ -156,7 +162,7 @@ $(document).ready(function() {
         if (playerTurn) {
             userSequence.push(2);
             $('#soundBlue')[0].play();
-            console.log(userSequence);
+
             $(this).addClass('bright'); // changes to light blue
             $("#blue").on("mouseup touchend", function(e) {
                 e.preventDefault();
@@ -171,7 +177,7 @@ $(document).ready(function() {
         if (playerTurn) {
             userSequence.push(3);
             $('#soundYellow')[0].play();
-            console.log(userSequence);
+
             $(this).addClass('bright'); // changes to light yellow
             $("#yellow").on("mouseup touchend", function(e) {
                 e.preventDefault();
@@ -186,7 +192,7 @@ $(document).ready(function() {
         if (playerTurn) {
             userSequence.push(4);
             $('#soundRed')[0].play();
-            console.log(userSequence);
+
             $(this).addClass('bright'); // changes to light red
             $("#red").on("mouseup touchend", function(e) {
                 e.preventDefault();
@@ -202,7 +208,7 @@ $(document).ready(function() {
     function compareArrays() {
 
         if (userSequence[userSequence.length - 1] !== sequence[userSequence.length - 1]) success = false;
-        if (userSequence.length == 6 && success == true) {
+        if (userSequence.length == 20 && success == true) {
             checkHighScore();
             winner();
         }
@@ -238,6 +244,7 @@ $(document).ready(function() {
         powerOn();
         sequence = [];
         $("#count").html('--');
+        playerTurn = false;
         $(".colorButton").removeClass('bright');
 
     }
@@ -246,7 +253,7 @@ $(document).ready(function() {
         $(".colorButton").addClass('bright');
         $("#count").html('WIN!');
         checkHighScore();
-        playerTurn = false;
+
         win = true;
         setTimeout(restart, 3000);
     }
