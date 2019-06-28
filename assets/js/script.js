@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
     let sequence = [];
-    let cpuSequence = [];
     let userSequence = [];
     let success;
     let turn;
