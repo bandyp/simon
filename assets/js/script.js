@@ -90,7 +90,7 @@ $(document).ready(function() {
         }
 
         cpuTurn = true;
-        playSequence = setInterval(makeBright, 800);
+        playSequence = setInterval(makeBright, 1000);
     }
 
     // function which allows cpu to select color and sound
@@ -111,31 +111,31 @@ $(document).ready(function() {
                     $('#green').addClass('bright'),
                         setTimeout(function() {
                             $('#green').removeClass('bright');
-                        }, 1000);
+                        }, 800);
                 }
                 if (sequence[bright] == 2) {
                     $('#soundBlue')[0].play();
                     $('#blue').addClass('bright'),
                         setTimeout(function() {
                             $('#blue').removeClass('bright');
-                        }, 1000);
+                        }, 800);
                 }
                 if (sequence[bright] == 3) {
                     $('#soundYellow')[0].play();
                     $('#yellow').addClass('bright'),
                         setTimeout(function() {
                             $('#yellow').removeClass('bright');
-                        }, 1000);
+                        }, 800);
                 }
                 if (sequence[bright] == 4) {
                     $('#soundRed')[0].play();
                     $('#red').addClass('bright'),
                         setTimeout(function() {
                             $('#red').removeClass('bright');
-                        }, 1000);
+                        }, 800);
                 }
                 bright++;
-            }, 400);
+            }, 200);
         }
     }
 
@@ -224,7 +224,7 @@ $(document).ready(function() {
             cpuTurn = true;
             bright = 0;
             $("#count").html(turn);
-            playSequence = setInterval(makeBright, 800);
+            playSequence = setInterval(makeBright, 1000);
         }
 
     }
