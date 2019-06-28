@@ -51,6 +51,8 @@ $(document).ready(function() {
     function powerOn() {
         playerTurn = true;
         cpuTurn = true;
+        success = false;
+        playerTurn = false;
         /*       sequence = [];
                userSequence = [];*/
         $("#count").html('--');
@@ -68,6 +70,8 @@ $(document).ready(function() {
     function powerOff() {
         playerTurn = false;
         cpuTurn = false;
+        sequence = [];
+        userSequence = [];
         $('.colorButton').removeClass('bright'),
             $("#count").html('');
         clearInterval(playSequence);
@@ -104,6 +108,7 @@ $(document).ready(function() {
         }
 
         if (cpuTurn) {
+            document.getElementById("start").disabled = true;
             $('.colorButton').removeClass('bright');
             setTimeout(function() {
                 if (sequence[bright] == 1) {
@@ -111,31 +116,31 @@ $(document).ready(function() {
                     $('#green').addClass('bright'),
                         setTimeout(function() {
                             $('#green').removeClass('bright');
-                        }, 1000);
+                        }, 1500);
                 }
                 if (sequence[bright] == 2) {
                     $('#soundBlue')[0].play();
                     $('#blue').addClass('bright'),
                         setTimeout(function() {
                             $('#blue').removeClass('bright');
-                        }, 1000);
+                        }, 1500);
                 }
                 if (sequence[bright] == 3) {
                     $('#soundYellow')[0].play();
                     $('#yellow').addClass('bright'),
                         setTimeout(function() {
                             $('#yellow').removeClass('bright');
-                        }, 1000);
+                        }, 1500);
                 }
                 if (sequence[bright] == 4) {
                     $('#soundRed')[0].play();
                     $('#red').addClass('bright'),
                         setTimeout(function() {
                             $('#red').removeClass('bright');
-                        }, 1000);
+                        }, 1500);
                 }
                 bright++;
-            }, 400);
+            }, 200);
         }
     }
 
@@ -224,7 +229,7 @@ $(document).ready(function() {
             cpuTurn = true;
             bright = 0;
             $("#count").html(turn);
-            playSequence = setInterval(makeBright, 2000);
+            playSequence = setInterval(makeBright, 1000);
         }
 
     }
