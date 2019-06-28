@@ -83,7 +83,7 @@ body {
 
 #red {
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     height: 30vh;
     width: 40vh;
     border-radius: 5% 5% 100% 5%;
@@ -98,7 +98,7 @@ body {
 
 #green {
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     height: 30vh;
     width: 40vh;
     border-radius: 5% 5% 5% 100%;
