@@ -111,31 +111,31 @@ $(document).ready(function() {
                     $('#green').addClass('bright'),
                         setTimeout(function() {
                             $('#green').removeClass('bright');
-                        }, 800);
+                        }, 1000);
                 }
                 if (sequence[bright] == 2) {
                     $('#soundBlue')[0].play();
                     $('#blue').addClass('bright'),
                         setTimeout(function() {
                             $('#blue').removeClass('bright');
-                        }, 800);
+                        }, 1000);
                 }
                 if (sequence[bright] == 3) {
                     $('#soundYellow')[0].play();
                     $('#yellow').addClass('bright'),
                         setTimeout(function() {
                             $('#yellow').removeClass('bright');
-                        }, 800);
+                        }, 1000);
                 }
                 if (sequence[bright] == 4) {
                     $('#soundRed')[0].play();
                     $('#red').addClass('bright'),
                         setTimeout(function() {
                             $('#red').removeClass('bright');
-                        }, 800);
+                        }, 1000);
                 }
                 bright++;
-            }, 200);
+            }, 400);
         }
     }
 
@@ -224,7 +224,7 @@ $(document).ready(function() {
             cpuTurn = true;
             bright = 0;
             $("#count").html(turn);
-            playSequence = setInterval(makeBright, 1000);
+            playSequence = setInterval(makeBright, 2000);
         }
 
     }
