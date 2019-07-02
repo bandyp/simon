@@ -1,3 +1,5 @@
+/* top of page */
+
 #helpButton {
     margin-top: 20px;
     margin-left: 20px;
@@ -41,54 +43,48 @@
     transform: rotate(5deg);
 }
 
+/* game colored buttons */
+
 #blue {
-    position: relative;
     margin-top: auto;
-    height: 40vmin;
-    max-width: 40vmin;
     border-radius: 100% 0% 0% 0%;
     border: solid 1vh rgb(232, 232, 232);
     background-image: radial-gradient(circle, rgba(25, 25, 142, 1), rgba(25, 25, 92, 1));
 }
 
 #yellow {
-    position: relative;
     margin-top: auto;
-    height: 40vmin;
-    max-width: 40vmin;
     border-radius: 0% 100% 0% 0%;
     border: solid 1vh rgb(232, 232, 232);
     background-image: radial-gradient(circle, rgba(178, 195, 62, 1), rgba(238, 165, 32, 1));
 }
 
 #red {
-    position: relative;
     margin-bottom: 1vh;
-    height: 40vmin;
-    max-width: 40vmin;
     border-radius: 0% 0% 100% 0%;
-    /*  margin: -40vh 0px 40vh 40vh; */
     border: solid 1vh rgb(232, 232, 232);
     background-image: radial-gradient(circle, rgba(139, 0, 0, 1), rgba(99, 0, 0, 1));
 }
 
 #green {
-    position: relative;
     margin-bottom: 1vh;
-    height: 40vmin;
-    max-width: 40vmin;
     border-radius: 0% 0% 0% 100%;
     border: solid 1vh rgb(232, 232, 232);
     background-image: radial-gradient(circle, rgba(0, 100, 0, 1), rgba(0, 60, 0, 1));
 }
 
 .colorButton {
+    position: relative;
+    height: 40vmin;
+    max-width: 40vmin;
     cursor: pointer;
 }
 
 .bright {
     filter: brightness(150%);
 }
+
+/* bottom of page buttons */
 
 #buttons {
     position: relative;

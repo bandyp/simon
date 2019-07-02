@@ -35,13 +35,10 @@ $(document).ready(function() {
     function powerButton() {
         var x = document.getElementById("power").classList.contains("change");
         if (x == false) {
-
             $('#power').addClass("change");
             powerOn();
         }
         else {
-
-
             $('#power').removeClass("change");
             powerOff();
         }
@@ -151,7 +148,6 @@ $(document).ready(function() {
             $(this).addClass('bright'); // changes to light green
             $('#soundGreen')[0].play();
             userSequence.push(1);
-
             $("#green").on("mouseup touchend", function(e) {
                 e.preventDefault();
                 $(this).removeClass('bright'); //changes back
@@ -166,7 +162,6 @@ $(document).ready(function() {
         if (playerTurn) {
             userSequence.push(2);
             $('#soundBlue')[0].play();
-
             $(this).addClass('bright'); // changes to light blue
             $("#blue").on("mouseup touchend", function(e) {
                 e.preventDefault();
@@ -250,14 +245,12 @@ $(document).ready(function() {
         $("#count").html('--');
         playerTurn = false;
         $(".colorButton").removeClass('bright');
-
     }
 
     function winner() {
         $(".colorButton").addClass('bright');
         $("#count").html('WIN!');
         checkHighScore();
-
         win = true;
         setTimeout(restart, 3000);
     }
