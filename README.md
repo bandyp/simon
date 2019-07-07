@@ -10,7 +10,7 @@ Why not try to beat your high score here: https://bandyp.github.io/simon/
 I wanted to make it visually clean and tidy. White background to contrast with 
 the bright colours.
 
-The idea is the user is playing this game for fun. There is a short story in 
+There is a short story in 
 the instructions and the game then makes it easy to try to break their own record.
 
 It's fully responsive on all screen sizes.
@@ -23,31 +23,34 @@ was moved to the top, then removed altogether. It ended up taking too much room
 on the page and didn't add to the look and feel of the game. 
 
 ## Features
-Instructions: I wanted to keep this fun. Playing the game is quite simple and 
+* Instructions: Playing the game is quite simple and 
 requires little guidance. But I like the idea of adding the element of helping 
 Simon reach his goal.
 
-High Score: The user can keep track of their best effort in a session.
+* High Score: The user can keep track of their best effort in a session.
 
-Audio/Visual: The buttons light up and sound plays when the user clicks the 
+* Audio/Visual: The buttons light up and sound plays when the user clicks the 
 coloured buttons. There is a slight gradient on the coloured buttons to give a 3D effect.
 Buttons respond visually to clicks. 
 
 
 ## Technology Used
-Balsamiq for the wireframe.
-
-Jquery for a lot of the script.
-
-Bootstrap, originally, I really didn't make much use of the it. But once the script 
+* HTML - for the sytructure of the content of the page
+* CSS3 - for designing the style of the the simon game
+* Javascript - for the gzame logic
+* Jquery - for moving around the DOM, simplifying the script
+* Jasmine - for testing that the player could not interupt the sequence accidently
+* Balsamiq for the wireframe
+* Bootstrap, originally, I really didn't make much use of the it. But once the script 
 was complete, I went back and fixed the HTML to be a lot more
 responsive with bootstrap. Changing the round circle into 2 rows worked much better.
-
-Google fonts - I tried to keep the buttons font a little retro and the score boxes
+* Google fonts - I tried to keep the buttons font a little retro and the score boxes
 a digital feel. 
 
 
 ## Testing
+
+### Manual Tests
 I found the JS/Jquery part quite challenging. I started with writing out the 
 logic in simple steps [here.](https://github.com/bandyp/simon/blob/master/logic.md)
 But even this needed to be simplified at each function. I would write a slightly 
@@ -61,6 +64,10 @@ that the functions worked to check the arrays etc.
 
 Finally, I had friends and relatives use the app on their own devices and 
 updates were made to fix the issue of timings.
+### Automated Tests
+* Jasmine - used to test that the JS was working correctly when the player shouldn't be able to play
+* Chrome Developer Tools - to ensure all screen sizes responded correctly
+* W3C HTML & CSS Validation - used to test HTML and CSS
 
 
 ## Deployment
@@ -85,4 +92,4 @@ help of the code institute tutors, stack overflow and youtube.
 
 
 ### Media
-Sounds I copied from free code camp tutorial from link above.
+Sounds I copied from free code camp tutorial from the same [link](https://github.com/bandyp/simon) above.
