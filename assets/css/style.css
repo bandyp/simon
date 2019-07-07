@@ -1,4 +1,4 @@
-/* top of page */
+/* help button */
 
 #helpButton {
     margin-top: 20px;
@@ -11,6 +11,8 @@
     font-size: 3vh;
     cursor: pointer;
 }
+
+/* high score label and box */
 
 #highScore {
     text-align: right;
@@ -36,6 +38,8 @@
     border-radius: 2vh;
 }
 
+/* simon title */
+
 #title {
     font-size: 7vh;
     margin-top: 3vh;
@@ -60,14 +64,14 @@
 }
 
 #red {
-    margin-bottom: 1vh;
+    margin-bottom: 4vh;
     border-radius: 0% 0% 100% 0%;
     border: solid 1vh rgb(232, 232, 232);
     background-image: radial-gradient(circle, rgba(139, 0, 0, 0.7), rgba(99, 0, 0, 1));
 }
 
 #green {
-    margin-bottom: 1vh;
+    margin-bottom: 4vh;
     border-radius: 0% 0% 0% 100%;
     border: solid 1vh rgb(232, 232, 232);
     background-image: radial-gradient(circle, rgba(0, 100, 0, 0.7), rgba(0, 60, 0, 1));
@@ -84,7 +88,7 @@
     filter: brightness(150%);
 }
 
-/* bottom of page buttons */
+/* start and power buttons */
 
 #buttons {
     position: relative;
@@ -119,21 +123,6 @@ button:active {
     transform: translateY(4px);
 }
 
-#count {
-    background: black;
-    display: inline-block;
-    height: 7vh;
-    width: 14vh;
-    color: red;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3vh;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 7vh;
-    border-radius: 2vh;
-    margin-bottom: 2vh;
-}
-
 #power {
     color: white;
     background-color: red;
@@ -150,4 +139,22 @@ button:active {
     width: 10vh;
     height: 7vh;
     padding: 0;
+}
+
+
+/* score box */
+
+#count {
+    background: black;
+    display: inline-block;
+    height: 7vh;
+    width: 14vh;
+    color: red;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3vh;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 7vh;
+    border-radius: 2vh;
+    margin-bottom: 2vh;
 }

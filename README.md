@@ -59,6 +59,9 @@ There was a lot of manual testing to ensure that the random sequence was
 generated, that the buttons corresponded to colours and sounds when clicked, 
 that the functions worked to check the arrays etc.
 
+Finally, I had friends and relatives use the app on their own devices and 
+updates were made to fix the issue of timings.
+
 
 ## Deployment
 I used Github for the deployment. I tried to keep to committing after each bit 
@@ -74,10 +77,11 @@ reached a point where I could write my own code. At certain points I sought the
 help of the code institute tutors, stack overflow and youtube.
 * Mentor - thank you to Seun for helping with the code for the high score function.
 * Tutors - always a great help to point you in the right direction. Particularly on binding clicks and touches to the same function
-* Stack overflow - to get the power button to toggle on and off I borrowed a particularly useful bit of code from here. It adds (or removes) a class when clicked then combines an if statement.
+* Stack overflow - to get the power button to toggle on and off I borrowed a particularly useful bit of code from here. It adds (or removes) a class when clicked then combines an if statement. Also, adding in [0] after the sound is called to make it play.
 * Memory game - my first bit of research before I started was from this [site.](https://marina-ferreira.github.io/memory-game/) It was here I took a bit of code to generate random numbers as well as being good practise for my own game.
 * Other versions of simon - I also looked to this [sight](https://github.com/beaucarnes/simon-game) to help adjust my own code a little where I needed to compare the arrays.
 * W3Schools - I got some of my own help for the help button.
+* Simon icon in title is from a website called iconfinder.
 
 
 ### Media
