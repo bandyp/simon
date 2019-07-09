@@ -7,7 +7,7 @@ $(document).ready(function() {
     let success;
     let turn;
     let cpuTurn;
-    let playerTurn;
+    var playerTurn;
     let bright;
     let playSequence;
     let win;

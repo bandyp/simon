@@ -33,6 +33,9 @@ Simon reach his goal.
 coloured buttons. There is a slight gradient on the coloured buttons to give a 3D effect.
 Buttons respond visually to clicks. 
 
+* In future, I might plan to have more difficult settings with 6 or 8 coloured buttons. Also, I feel the sounds could be improved open to sound more musical.
+
+* BUG - The help button has an issue on firefox, which could not be fixed from searches online.
 
 ## Technology Used
 * HTML - for the sytructure of the content of the page
@@ -89,6 +92,7 @@ help of the code institute tutors, stack overflow and youtube.
 * Other versions of simon - I also looked to this [sight](https://github.com/beaucarnes/simon-game) to help adjust my own code a little where I needed to compare the arrays.
 * W3Schools - I got some of my own help for the help button.
 * Simon icon in title is from a website called iconfinder.
+* Simon the original game was developed by 
 
 
 ### Media

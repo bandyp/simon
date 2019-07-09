@@ -19,14 +19,14 @@ function "simonArray" to link numbers:
 •	If player reaches 20 then do success function
 
 Fail function
-•	All lights flash twice
-•	2 beeps
+•	All lights flash
+•	beeps
 •	Counter goes to “–“
 •	Reset all functions
 
 Success function
-•	All lights stay on for 5 secs
-•	Counter reads “win” for 5 sec, then goes to “-“
+•	All lights stay on for 3 secs
+•	Counter reads “win” for 3 sec, then goes to “-“
 •	Reset all functions
 
 Test function used to test logic
