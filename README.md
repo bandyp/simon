@@ -6,6 +6,8 @@ cleaner layout looked much better.
 While still resembling the original game, it looks and functions much better. 
 Why not try to beat your high score here: https://bandyp.github.io/simon/
 
+![](https://github.com/bandyp/simon/blob/master/assets/images/image.png)
+
 ## UX
 I wanted to make it visually clean and tidy. White background to contrast with 
 the bright colours.
@@ -92,7 +94,7 @@ help of the code institute tutors, stack overflow and youtube.
 * Other versions of simon - I also looked to this [sight](https://github.com/beaucarnes/simon-game) to help adjust my own code a little where I needed to compare the arrays.
 * W3Schools - I got some of my own help for the help button.
 * Simon icon in title is from a website called iconfinder.
-* Simon the original game was developed by 
+* Simon the original game was developed by Ralph H. Baer and Howard J. Morrison with the coding by Lenny Cope.
 
 
 ### Media

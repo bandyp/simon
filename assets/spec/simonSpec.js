@@ -1,25 +1,32 @@
-describe("ensure 'sequence' called 20 times", function() {
-    it("'sequence' should be called times from 'play' function", function() {
-        sequence = [];
-        expect(sequence.length).toBe(20);
+describe("power is off", function(){
+    it("there is no power", function(){
+        var x;
+        expect(x).toBe(false);
     });
 });
 
-describe("powerOff function", function() {
-    it("should return true if the players turn is turned off", function() {
-        
-        expect('playerTurn').not.toBe(true);
-    });
-});
+//describe("ensure 'sequence' array has 20 numbers from 'play' function", function() {
+//    it("'sequence' should have 20 numbers from 'play' function", function() {
+//        sequence = [];
+//        spyOn(window, "powerButton");
+//        expect(play).toHaveBeenCalled();
+//    });
+//});
 
-describe("makeBright function", function() {
-    it("should return true if the players turn is turned off", function() {
-        expect(playerTurn).toBe(false);
-    });
-});
+//describe("powerOff function", function() {
+//    it("should return true if the playerTurn is turned off", function() {
+//        expect(playerTurn).toMatch(false);
+//    });
+// });
 
-describe("restart function", function() {
-    it("should return true if the players turn is turned off", function() {
-        expect(playerTurn).not.toBe(false);
-    });
-});
+// describe("makeBright function", function() {
+//    it("should return true if the playerTurn is turned off", function() {
+//        expect(playerTurn).toMatch(false);
+//    });
+// });
+
+// describe("restart function", function() {
+//    it("should return true if the playerTurn is turned off", function() {
+//        expect(playerTurn).toMatch(false);
+//    });
+// });
