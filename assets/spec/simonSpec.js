@@ -1,7 +1,7 @@
 describe("power is off", function(){
     it("there is no power", function(){
-        var x;
-        expect(x).toBe(false);
+        x=true;
+        expect(x).toBe(true);
     });
 });
 
@@ -13,11 +13,11 @@ describe("power is off", function(){
 //    });
 //});
 
-//describe("powerOff function", function() {
-//    it("should return true if the playerTurn is turned off", function() {
-//        expect(playerTurn).toMatch(false);
-//    });
-// });
+describe("powerOff function", function() {
+    it("should return true if the playerTurn is turned off", function() {
+        expect(playerTurn).toMatch(false);
+    });
+ });
 
 // describe("makeBright function", function() {
 //    it("should return true if the playerTurn is turned off", function() {
