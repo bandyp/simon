@@ -13,9 +13,11 @@ describe("power is off", function(){
 //    });
 //});
 
+var playerTurn;
+
 describe("powerOff function", function() {
     it("should return true if the playerTurn is turned off", function() {
-        expect(playerTurn).toMatch(false);
+        expect(playerTurn).toBe(true);
     });
  });
 
