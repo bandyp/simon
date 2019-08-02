@@ -43,10 +43,3 @@ Functions needed:
     •	Green
 6.	Fail function
 7.	Success function
-
-Variables needed:
-Var/let:
-•	turn
-
-Const:
-•	turnCounter

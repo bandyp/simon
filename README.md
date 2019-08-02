@@ -1,8 +1,10 @@
 
 # Simon Says
-I really wanted to test myself with the javascript and jquery for this project. 
-I planned to keep the design close to the original look, but then realised a 
-cleaner layout looked much better. 
+Here is a digital replica of the famous 80's game of the same name. The idea is 
+to repeat the games sequence of colors which adds up by one for every successful turn.
+It was important that the games graphics remained responsive to different screen sizes
+and that the turns moved seemlessly between the game and the user. 
+ 
 While still resembling the original game, it looks and functions much better. 
 Why not try to beat your high score here: https://bandyp.github.io/simon/
 
@@ -98,4 +100,4 @@ help of the code institute tutors, stack overflow and youtube.
 
 
 ### Media
-Sounds I copied from free code camp tutorial from the same [link](https://github.com/bandyp/simon) above.
+Sounds I copied from free code camp tutorial from the same [link]((https://github.com/beaucarnes/simon-game) above.

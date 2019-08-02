@@ -22,22 +22,20 @@ $(document).ready(function() {
         }
     }
 
-
     // easy help box alert to guide uses on instructions
 
     $("#helpBox").hide(); // starts hidden
-    $("#helpButton").mouseover(function() { // will activate when cursor hovers over
+    $("#helpButton").mousedown(function() { // will activate when mouse button is clicked down
         $("#helpBox").show(); // shows the dialogue
-        $("#helpButton").mouseleave(function() { // will go back hidden when cursor is not hovering
+        $("#helpButton").mouseup(function() { // will go back hidden when mouse button is unclicked
             $("#helpBox").hide();
         });
     });
 
-
 // toggle power button on and off
 
-    document.getElementById("power").onclick = function() { powerButton() };
-
+//    document.getElementById("power").onclick = function() { powerButton() };
+$("#power").click(powerButton) 
 // adds and removes class of 'change' to tell if power is on or off 
     function powerButton() {
         var x = document.getElementById("power").classList.contains("change");
@@ -78,7 +76,6 @@ $(document).ready(function() {
         clearInterval(playSequence); // the series of cpu button presses is cleared
         document.getElementById("start").disabled = true; //start button will not click
     }
-
 
     // start play function by creating sequence of 20 from start button, it will then call the cpu to start the lighting buttons function, in 1 sec intervals
 
@@ -147,7 +144,6 @@ $(document).ready(function() {
         }
     }
 
-
     // user clicking lights, both clicks and touches
 
     $("#green").on("mousedown touchstart", function(e) { // what happpens when the green button is clicked on computer or touched on mobile devices
@@ -160,7 +156,6 @@ $(document).ready(function() {
                 e.preventDefault();
                 $(this).removeClass('bright'); //removes brightness
                 compareArrays(); //this will call a function to see if user is correct
-
             });
         }
     });
@@ -209,7 +204,6 @@ $(document).ready(function() {
         }
     });
 
-
     // checks that user has clicked the correct color in the sequence 
 
     function compareArrays() {
@@ -235,7 +229,6 @@ $(document).ready(function() {
         }
 
     }
-
 
 // what happens if the game ends and player loses
     function end() {
