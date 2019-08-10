@@ -26,6 +26,14 @@ This then evolved over time. Instead of the control panel in the centre it
 was moved to the top, then removed altogether. It ended up taking too much room 
 on the page and didn't add to the look and feel of the game. 
 
+### Users
+Expected users could be anyone who wants to challenge their memory and play a game to pass the time.
+
+### User Stories
+* A commuter travelling to and from work looking to pass some time.
+* Children playing to challenge each other against the computer.
+* A student on a study break, training their brain.
+
 ## Features
 * Instructions: Playing the game is quite simple and 
 requires little guidance. But I like the idea of adding the element of helping 
@@ -44,15 +52,16 @@ Buttons respond visually to clicks.
 ## Technology Used
 * HTML - for the sytructure of the content of the page
 * CSS3 - for designing the style of the the simon game
-* Javascript - for the gzame logic
+* Javascript - for the game logic
 * Jquery - for moving around the DOM, simplifying the script
 * Jasmine - for testing that the player could not interupt the sequence accidently
-* Balsamiq for the wireframe
-* Bootstrap, originally, I really didn't make much use of the it. But once the script 
-was complete, I went back and fixed the HTML to be a lot more
-responsive with bootstrap. Changing the round circle into 2 rows worked much better.
+* Balsamiq - for the wireframe
+* Bootstrap - framework for responsiveness
 * Google fonts - I tried to keep the buttons font a little retro and the score boxes
 a digital feel. 
+* Git - for version control
+* GitHub - to host the repository
+* GitHup Pages - Website hosting.
 
 
 ## Testing
@@ -71,10 +80,12 @@ that the functions worked to check the arrays etc.
 
 Finally, I had friends and relatives use the app on their own devices and 
 updates were made to fix the issue of timings.
+
 ### Automated Tests
 * Jasmine - used to test that the JS was working correctly when the player shouldn't be able to play
 * Chrome Developer Tools - to ensure all screen sizes responded correctly
 * W3C HTML & CSS Validation - used to test HTML and CSS
+* JSHint - used to test Javascript
 
 
 ## Deployment
@@ -82,6 +93,18 @@ I used Github for the deployment. I tried to keep to committing after each bit
 of functionality was added. Through the different versions it's possible to see 
 how the game evolved over time. Follow the link to the github depository to see 
 the version updates. https://github.com/bandyp/simon
+
+The process involved:
+* Hosting a git repository on GitHub.
+* On the Github repository go to the settings page and GitHub Pages section.
+* Change source to master branch.
+* Link is provided to page.
+
+To deploy your own version:
+* Visit the repository [here](https://github.com/bandyp/simon)
+* Click 'clone' to copy
+* Open your IDE
+* Type 'git clone https://github.com/bandyp/simon.git' in the terminal window of the root directory
 
 ## Credits
 
